@@ -1,0 +1,217 @@
+http://old-www.cs.dartmouth.edu/~xia/cs60/project.html
+3
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 60</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="">
+            <i class="fa fa-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="">
+            <i class="fa fa-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class="">
+            <i class="fa fa-folder-open"></i><a href="assignments.html">Assignments</a>
+            </li>
+            <li class="pure-menu-selected">
+            <i class="fa fa-flask"></i><a href="project.html">Project</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/network.jpg" height=120px size=100%></img>
+          </p> 
+        </div>
+
+        <a name="#schedule"></a>
+        <div class="header">
+          <h1><i class="fa fa-flask"></i> Project: DartSync</h1>
+        </div>
+        <div class="content">
+          <h3><i class="fa fa-hand-o-right"></i> Overview</h3>
+          <p>We all enjoyed the use of Dropbox -- we can have our documents, photos, and videos available anywhere and anytime. All the files we store at Dropbox are automatically synchronized across our personal devices. The advantages of using such cloud-based storage services are many. However, these advantages come with prices. By uploading our data to the centralized, third-party cloud, we are not only imposing a huge traffic burden to the network that connects mobile to the cloud, but also running the risk that our data, sometimes private data, can fall into the wrong hands. These unwanted data leaks can be caused by secretive  trading of our data for profits, or accidental mis-management inside the cloud, or malicious outsider attacks.</p>
+
+          <p>In this project, we explore a completely different paradigm for synchronizing our personal data across different devices. Rather than relying on the centralized cloud, we enable local file exchange and synchronization across devices. Devices can directly talk to each other to obtain the latest files, and all files are stored locally. The resulting benefits are twofold. First, it naturally protects user's data privacy, since all data are stored locally and controlled by users, and no copies are made on centralized cloud. Second, it constraints traffic within a local network, which not only reduces the network traffic burden to remote cloud servers, but also leads to faster file synchronization by accessing local networks. This design paradigm is towards our vision of a "decentralized cloud".</p>
+
+          <div style="float: right; text-align: center;">
+            <img src="project/pi.jpeg" style="width:60px; max-width:100%"></img><br/>
+            <img src="project/pi-kit.jpg" style="width:200px; max-width:100%"></img>
+          </div>
+
+          <p>Specifically, we are implementing a system called DartSync, which is an application that runs on a local always-on node as a tracker, and a set of our personal devices as peers. Users can specify files that they want to synch across devices, and DartSync will synchronize these files across devices upon file update, addition, or removal. Ideally we would like to have you implement the tracker on a <a href="http://www.raspberrypi.org/">Raspberry Pi</a> node, a credit-card size Linux machine supporting Python and C. We choose Pi to implement the tracker because it entails low power to stay always on. We do recognize, however, the possible stability issues of Pi, so we do not require implementing the tracker on Pi. If you can implement your tracker on Pi, that is fantastic. The peer nodes can be our laptops, or the Linux machines in Lab 003, or even smartphones -- it really up to you in terms of how you want to extend your code to different devices. We do not have a strict requirement here, except that you should be able to demo the synchronization across no less than 4 devices.</p>
+ 
+
+          <p>At the high level, DartSync runs on a tracker (server) and multiple peers (clients).  The tracker collects file information from all peers, maintains records of all files, and notifies peers upon any file updates. Note that tracker does not store files, but rather only keeps file information. A peer node monitors a local file directory, communicates with the tracker, and updates files if necessary. To use DartSync, a user specifies a local file directory to synchronize (similar to the Dropbox root directory), and the DartSync system synchronizes all files under this directory across all peer nodes.</p>
+
+
+          <p> For more design details, please refer to this <a href="project/dartsync.pdf">design document</a>. Please keep in mind that we offer you detailed design only for your reference.  Feel free to come up with other designs as long as they implement our desired features.</p>
+
+          <h3><i class="fa fa-hand-o-right"></i> Requirements</h3>
+          <p>Your tasks for this project are 1) building the DartSync system, 2) giving a group presentation and demo, and 3) writing a project report per group, which summarizes your design, possible extensions, and most importantly the lessons you have learned. We will evaluate all these tasks for your final score on this project.</p>
+
+          <p>Unlike our previous assignments where we give you well-defined code structure and you mainly fill in the implementation for specific functions, the class project is more open, where you have the freedom to design the code structure and implement functions. That said, your code needs to realize the following basic features:</p>
+          <ul>
+            <li>C implementation that can run in any Linux system.</li>
+            <li>TCP connection and data transfer.</li>
+            <li>Local file monitoring.</li>
+            <li>Synchronization of multiple files by comparing file timestamps.</li>
+            <li>File replacement when updating files.</li>
+            <li>Fetching data from multiple peers.</li>
+            <li>Synchronization of multiple file folders.</li>
+          </ul>
+
+          Here's the list of advanced features we encourage you to try:
+          <ul>
+            <li>Implementing tracker on Raspberry Pi.</li>
+            <li>Incremental (delta) file update where only the differences rather than the whole file are transmitted.</li>
+            <li>Resuming from partial download.</li>
+            <li>Resolving conflict.</li>
+            <li>Supporting other OS platforms such as Mac OS and Windows, and other devices such as Android smartphones or iPhones.</li>
+            <li>Any other cool useful features that you can think of... </li>
+          </ul>
+
+          <h3><i class="fa fa-hand-o-right"></i> Meet Our Teams!</h3>
+          <table id="schedule" class="pure-table">
+            <tr>
+              <td align="center" style="background-color:#1f8dd6"><font color="white">Team Name</font></td>
+              <td align="center" style="background-color:#1f8dd6"><font color="white">Team Members</font></td>
+              <td align="center" style="background-color:#1f8dd6"><font color="white">SVN repo</font></td>
+              <td align="center" style="background-color:#1f8dd6"><font color="white">Shepherd</font></td>
+            </tr>
+
+            <tr>
+              <td>FanTCPants</td>
+              <td>Ross Bower, Andre Chen, Shelley Garg, Joon Cho</td>
+              <td>team1</td>
+              <td>Xi Xiong</td>
+            </tr>
+
+            <tr>
+              <td>PiratesOfTheC</td>
+              <td>Yining Chen, Tyler Albarran, Oluwadamilola Apoeso, Seok Jun Bing </td>
+              <td>PiratesOfTheC</td>
+              <td>Xi Xiong</td>
+            </tr>
+
+            <tr>
+              <td>Code Crushers</td>
+              <td>Kevin Donahoe, Huimin Zhou, Christopher Frangieh, Binbin Zhou </td>
+              <td>Code-Crushers</td>
+              <td>Yuan Tian</td>
+            </tr>
+
+            <tr>
+              <td>PI-Net</td>
+              <td>Vishal Gaurav, Jing Ge, Di Zhai </td>
+              <td>team5</td>
+              <td>Yuan Tian</td>
+            </tr>
+
+            <tr>
+              <td>Team C-Port</td>
+              <td>Khizar Hussain, Xiankai Yang, Luyang Li, Shanzae Nadeem Khan </td>
+              <td>Team-C-Port</td>
+              <td>Yuan Tian</td>
+            </tr>
+
+            <tr>
+              <td>byteMe</td>
+              <td>Junmo Kim, Weiqiang Liu, Nisha Kumari, Christopher Kymn </td>
+              <td>byteMe</td>
+              <td>Shawn Xie</td>
+            </tr>
+
+            <tr>
+              <td>C-Men</td>
+              <td>Justin Lee, Charles Li, Joshua Kerber, Tianqi Li </td>
+              <td>C-Men</td>
+              <td>Tom Chang</td>
+            </tr>
+
+            <tr>
+              <td>segfault in our stars</td>
+              <td>Rebecca Liu, Jonathan Kramer, Kun Ma, Nan Hu</td>
+              <td>team2</td>
+              <td>Ethan Yu</td>
+            </tr>
+
+            <tr>
+              <td>sudi-codians</td>
+              <td>Collin McKinney, Mitchell Revers, Renjie Zhu, Taeho Sung</td>
+              <td>sudi-codians</td>
+              <td>Shawn Xie</td>
+            </tr>
+
+            <tr>
+              <td>Mustang</td>
+              <td>Debanjum Solanky, Dongjun Suh, Amirhossein Sharifzadeh, Lexin Tang</td>
+              <td>team3</td>
+              <td>Shawn Xie</td>
+            </tr>
+
+            <tr>
+              <td>C-monkeys</td>
+              <td>Victoria Taylor, Naofumi Tomita, Feng Wang, Fanjie Xiao</td>
+              <td>C-monkeys</td>
+              <td>Xi Xiong</td>
+            </tr>
+
+            <tr>
+              <td>Socket Monsters</td>
+              <td>Chimian Wu, Nicholas Fiacco, Kooshul Jhaveri, Jing Geng</td>
+              <td>Socket-Monsters</td>
+              <td>Ethan Yu</td>
+            </tr>
+
+            <tr>
+              <td>Socket Squad</td>
+              <td>Anthony Addo, Justin Gualtieri, Shivang Sethi, Xiaoting Zou</td>
+              <td>team4</td>
+              <td>Tom Chang</td>
+            </tr>
+
+            <tr>
+              <td>SevenDeadlySYNs</td>
+              <td>Jacob Weiss, Adam Grounds, David Harmon, Matthew McFarland</td>
+              <td>SevenDeadlySYNs</td>
+              <td>Ethan Yu</td>
+            </tr>
+
+          </table>
+        </div>   
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+</html>
+

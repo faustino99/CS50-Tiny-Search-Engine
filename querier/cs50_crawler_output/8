@@ -1,0 +1,236 @@
+http://old-www.cs.dartmouth.edu/~xia/cs69/schedule.html
+3
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS69/169</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="">
+            <i class="icon-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="pure-menu-selected">
+            <i class="icon-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class="">
+            <i class="icon-bookmark"></i><a href="readings.html">Readings</a>
+            </li>
+            <li class="">
+            <i class="icon-gamepad"></i><a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/wireless.png" height=200px size=100%></img>
+          </p> 
+        </div>
+
+        <a name="#schedule"></a>
+        <div class="header">
+          <h1>Schedule</h1>
+        </div>
+        <div class="content">
+          <p>Seminar topics are still tentative. They will be
+          finalized as we get closer to the fall term.
+          </p>
+
+          <table id="schedule" class="pure-table">
+            <thead>
+              <tr style="background-color:black; color:white;">
+                <th align="center">Date</th>
+                <th align="center">Topic</th>
+                <th align="center">Papers</th>
+                <th align="center">Presenters</th>
+                <th align="center">Note</th>
+              </tr>
+            </thead>
+
+            <tr>
+              <td>Sept. 17</td>
+              <td>Kickoff</td>
+              <td align="center"><a href="http://blizzard.cs.uwaterloo.ca/keshav/home/Papers/data/07/paper-reading.pdf">How to Read a Paper</a></td>
+              <td>Xia</td>
+              <td align="center"><a href="https://piazza.com/dartmouth/fall2015/cs69169"><i>Sign up on Piazza and claim papers!</i></a></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#ccc"><font color="black">Wireless Communication</font></td>
+            </tr>
+
+            <tr>
+              <td>Sept. 22</td>
+              <td>Wireless 101</td>
+              <td><a href="http://www.stanford.edu/~skatti/pubs/mobicom10-fd.pdf">CJS+10</a></td>
+              <td>Michael</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Sept. 24</td>
+              <td>Radio spectrum management</td>
+              <td><a href="http://pages.cs.wisc.edu/~tzhang/papers/vscope_mobicom2014.pdf">ZLB14</a>, <a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-shi.pdf">SBK15</a></td>
+              <td>Jinzheng</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Sept. 29</td>
+              <td>Interference management</td>
+              <td><a href="http://www.sigmobile.org/mobicom/2015/papers/p566-chenA.pdf">CQZ+15</a>, <a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-chen.pdf">CYK15</a></td>
+              <td>Ayan</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 1</td>
+              <td>mmWave</td>
+              <td><a href="http://xyzhang.ece.wisc.edu/papers/SSur_SIGMETRICS_60GHzLink.pdf">SVZ+15</a>, <a href="https://www.cs.ucsb.edu/~ravenben/publications/pdf/60gradar-mobicom15.pdf">ZZZ+15</a></td>
+              <td>Jiaming, ?</td>
+              <td align="center"><i>Proposal due on Oct. 2</i></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 6</td>
+              <td>nmWave</td>
+              <td><a href="http://research.microsoft.com/pubs/240761/mobi008f-yangA.pdf">YWZ+15</a>, <a href="http://dl.acm.org/citation.cfm?id=2742651">LLT+15</a></td>
+              <td>Wei, Saisi</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 8</td>
+              <td align="center" colspan="4"><i>Guest lecture by Jane Quigley</i></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 13</td>
+              <td>Backscatter</td>
+              <td><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p255.pdf">HZG15</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p283.pdf">BJK+15</a></td>
+              <td>Michael, Debanjum</td>
+              <td align="center"></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 15</td>
+              <td>Beyond the Conventional</td>
+              <td><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-roy.pdf">RGC15</a>, <a href="http://dl.acm.org/citation.cfm?id=2632053">PHW+14</a></td>
+              <td>Vibhu, Suleman</td>
+              <td align="center"></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 20</td>
+              <td align="center" colspan="4" style="background-color:#1f8dd6"><font color="white">Project Mid Presentation</font></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#ccc"><font color="black">Wireless Systems & Applications</font></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 22</td>
+              <td>Localization</td>
+              <td><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf">AVK+15</a>, <a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p269.pdf">KJB+15</a></td>
+              <td>Zhen, Michael</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 27</td>
+              <td>Sensing</td>
+              <td><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-joshi.pdf">JBK+15</a>, <a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-adib.pdf">AKK15</a></td>
+              <td>Huan, Saisi</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Oct. 29</td>
+              <td>Wearables</td>
+              <td><a href="http://www.ece.neu.edu/wineslab/papers/Santagati15MOBISYS.pdf">SM15</a>, <a href="http://www.sigmobile.org/mobicom/2015/papers/p400-mayberryA.pdf">MTH+15</a></td>
+              <td>Binjie, Nisha</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 3</td>
+              <td>Drones</td>
+              <td><a href="http://works.bepress.com/cgi/viewcontent.cgi?article=1006&context=zhengs">PSM+11</a>, <a href="http://dl.acm.org/citation.cfm?id=2750685">BVP15</a>, <a href="http://dl.acm.org/citation.cfm?id=2750678">HKZ+15</a></td>
+              <td>Jie, Yunfeng, Nishant</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 5</td>
+              <td>Energy</td>
+              <td><a href="http://www.sigmobile.org/mobicom/2015/papers/p2-shiA.pdf">SKK+15</a>, <a href="http://research.microsoft.com/en-us/um/people/moscitho/Publications/SOSP2015.pdf">BCD+15</a></td>
+              <td>Xi, Vishal</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 10</td>
+              <td>Security & Privacy</td>
+              <td><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-hassanieh.pdf">HWK15</a>, <a href="http://www.sigmobile.org/mobicom/2015/papers/p130-weiA.pdf">WWZ+15</a></td>
+              <td>Travis, Michael</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 12</td>
+              <td>Interplay with other disciplines</td>
+              <td><a href="http://synrg.csl.illinois.edu/papers/overlay.pdf">JMC15</a>, <a href="http://dl.acm.org/citation.cfm?id=2818072">AHM+15</a></td>
+              <td>Debanjum, ?</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 17</td>
+              <td align="center" colspan="4"><i>No class meeting, work on project</i></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 19</td>
+              <td align="center" colspan="4" style="background-color:#1f8dd6"><font color="white">Project Final Presentation </font></td>
+            </tr>
+
+            <tr>
+              <td>Nov. 24</td>
+              <td colspan="3"></td>
+              <td align="center"><i>Project report due</i></td>
+            </tr>
+          </table>
+        </div>   
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,378 @@
+./queriertest.sh
+### Test with invalid arguments
+'./querier' output:
+usage: ./querier pageDirectory indexFilename
+
+'./querier random_dir cs50_indexer_file' output:
+'random_dir' is not a valid crawler output directory
+
+'./querier cs50_crawler_output asdfasdf' output:
+asdfasdf is unreadable
+
+### Test using fuzztester on large index file created using cs50_wiki_crawler_output taken from the cs50 directory
+'./fuzzquery wiki_index_file 10 0 | ./querier cs50_wiki_crawler_output/ wiki_index_file' output:
+./fuzzquery: generating 20 queries from 102794 words
+KEY WORDS:> Query: albyn griffures institute or sections 
+Matches 161 documents (ranked):
+score 29 doc  562: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/SAT.html
+score  8 doc  516: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Appalachian_Trail.html
+score  8 doc  728: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Man_page.html
+score  8 doc  966: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Manual_page_(Unix).html
+score  6 doc  921: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/GNU_General_Public_License.html
+score  5 doc  482: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/The_Wall_Street_Journal.html
+score  5 doc  910: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Mandriva_Linux.html
+score  5 doc 1084: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/COBOL.html
+score  5 doc 1488: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Biological_engineering.html
+score  5 doc 1560: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Information_security.html
+score  4 doc 1372: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cyclone_(programming_language).html
+score  4 doc 1427: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Polymer_engineering.html
+score  4 doc  263: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cornell_Big_Red_men%27s_ice_hockey.html
+score  4 doc  298: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Princeton_Tigers.html
+score  4 doc 1664: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Distributed_computing.html
+score  4 doc 1673: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Bletchley_Park.html
+score  3 doc 1295: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linker_(computing).html
+score  3 doc 1324: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Microcontroller.html
+score  3 doc 1363: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/PL/I.html
+score  3 doc  160: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/PHP.html
+score  3 doc  655: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Transaction_Processing_Facility.html
+score  3 doc  922: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linux_kernel.html
+score  3 doc  520: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/The_Dartmouth.html
+score  3 doc 1589: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Formal_methods.html
+score  3 doc 1599: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_compression.html
+score  3 doc  991: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Executable_and_Linkable_Format.html
+score  3 doc  901: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/DragonFly_BSD.html
+score  2 doc  184: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CPU_cache.html
+score  2 doc  946: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Newline.html
+score  2 doc  948: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Job_Control_Language.html
+score  2 doc  539: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Manhattan.html
+score  2 doc  545: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/White_Mountains_(New_Hampshire).html
+score  2 doc 1006: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/BSD.html
+score  2 doc 1071: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Berkeley_Software_Distribution.html
+score  2 doc 1073: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Assembly_language.html
+score  2 doc 1081: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+score  2 doc  164: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Black_hat_hacking.html
+score  2 doc 1119: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/WxDev-C%2b%2b.html
+score  2 doc 1192: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Buffer_overflow.html
+score  2 doc 1208: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Stdio.html
+score  2 doc  610: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Methodist.html
+score  2 doc  621: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Daniel_Webster.html
+score  2 doc  169: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linear_hashing.html
+score  2 doc  665: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/AmigaOS.html
+score  2 doc 1421: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Mechatronics.html
+score  2 doc  332: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Encyclop%c3%a6dia_Britannica.html
+score  2 doc 1459: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Automation.html
+score  2 doc  782: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cut_(Unix).html
+score  2 doc 1494: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Virtual_reality.html
+score  2 doc 1547: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Query_languages.html
+score  2 doc  826: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Size_(Unix).html
+score  2 doc 1569: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_mining.html
+score  2 doc 1573: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Turing_Test.html
+score  2 doc  174: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Java_(programming_language).html
+score  2 doc  508: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sexual_harassment.html
+score  2 doc 1647: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Digital_camera.html
+score  2 doc  918: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Coreutils.html
+score  2 doc 1665: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Human_Genome_Project.html
+score  2 doc  180: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Quadratic_probing.html
+score  1 doc  781: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Diff.html
+score  1 doc  282: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/College_of_the_Holy_Cross.html
+score  1 doc  783: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Csplit.html
+score  1 doc  794: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Talk_(software).html
+score  1 doc  283: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Claremont_McKenna_College.html
+score  1 doc  863: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Small_caps.html
+score  1 doc  885: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Text_editor.html
+score  1 doc 1692: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pascal%27s_calculator.html
+score  1 doc  306: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_pong.html
+score  1 doc  329: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Scripps_College.html
+score  1 doc  163: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/String_(computing).html
+score  1 doc  399: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/The_Sting.html
+score  1 doc  945: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Delimiter.html
+score  1 doc  419: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/San_Diego_Padres.html
+score  1 doc  433: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Owen_Chamberlain.html
+score  1 doc   79: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Recursion.html
+score  1 doc  973: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/TeX.html
+score  1 doc  978: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Troff.html
+score  1 doc  984: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pascal_(programming_language).html
+score  1 doc  488: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_Medical_School.html
+score  1 doc  499: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College_traditions.html
+score  1 doc 1012: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Semaphore_(programming).html
+score  1 doc 1023: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Internet.html
+score  1 doc 1056: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Operating_system.html
+score  1 doc  500: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Instant_messaging.html
+score  1 doc  502: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/E-mail.html
+score  1 doc   97: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Null_pointer.html
+score  1 doc  107: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linguistics.html
+score  1 doc  130: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/NIST.html
+score  1 doc 1139: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Ben_Klemens.html
+score  1 doc 1174: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/ISO_standard.html
+score  1 doc 1177: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Memory_leak.html
+score  1 doc 1184: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Variable_(programming).html
+score  1 doc 1186: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Malloc.html
+score  1 doc  538: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Metropolitan_Opera.html
+score  1 doc 1193: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Bounds_checking.html
+score  1 doc 1199: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pointer_arithmetic.html
+score  1 doc  183: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Translation_lookaside_buffer.html
+score  1 doc 1214: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Fortran-2.html
+score  1 doc 1236: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/External_variable.html
+score  1 doc 1244: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Page_break.html
+score  1 doc 1253: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/String_literal.html
+score  1 doc 1254: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/FORTRAN_77.html
+score  1 doc 1283: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Type_checking.html
+score  1 doc 1285: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Specification.html
+score  1 doc 1292: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Object-oriented_programming.html
+score  1 doc  135: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Karl_Pearson.html
+score  1 doc 1306: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Static_typing.html
+score  1 doc 1315: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Curly_braces.html
+score  1 doc 1317: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Semicolon.html
+score  1 doc 1319: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pointer_(computer_programming).html
+score  1 doc  558: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Thesis.html
+score  1 doc 1329: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/International_Organization_for_Standardization.html
+score  1 doc 1335: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Operating_systems.html
+score  1 doc 1339: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Static_type_system.html
+score  1 doc 1362: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/FORTRAN.html
+score  1 doc  189: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Birthday_problem.html
+score  1 doc 1364: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/ALGOL_68.html
+score  1 doc  579: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Downhill_skiing.html
+score  1 doc 1383: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Type_system.html
+score  1 doc 1386: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/ANSI_C.html
+score  1 doc 1391: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Programming_paradigm.html
+score  1 doc 1398: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Transhumanism.html
+score  1 doc 1404: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Diffusion_of_innovations.html
+score  1 doc  596: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Peroration.html
+score  1 doc 1422: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Mechanical_engineering.html
+score  1 doc 1424: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Geotechnical_engineering.html
+score  1 doc  196: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Prime_number.html
+score  1 doc 1442: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Military_engineering.html
+score  1 doc  613: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Long_Island.html
+score  1 doc 1470: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Multimedia_learning.html
+score  1 doc  246: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Union_Dutchmen.html
+score  1 doc  626: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Thayer_School_of_Engineering.html
+score  1 doc 1506: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Telecommunication.html
+score  1 doc 1508: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Software_testing.html
+score  1 doc 1519: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Number_theory.html
+score  1 doc 1536: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Secondary_school.html
+score  1 doc  627: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Geisel_School_of_Medicine.html
+score  1 doc 1557: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Special_effects.html
+score  1 doc  643: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+score  1 doc 1565: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Medical_Image_Computing.html
+score  1 doc  149: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C%2b%2b11.html
+score  1 doc  657: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/ReactOS.html
+score  1 doc 1581: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Type_systems.html
+score  1 doc  659: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/OS/2.html
+score  1 doc  277: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/St._John%27s_College_(Annapolis/Santa_Fe).html
+score  1 doc 1623: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computational_linguistics.html
+score  1 doc 1626: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_system.html
+score  1 doc 1634: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Harvard_Business_School.html
+score  1 doc 1635: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Engineering.html
+score  1 doc 1641: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Integrated_circuit.html
+score  1 doc 1644: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Simulation.html
+score  1 doc  695: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Process_management_(computing).html
+score  1 doc 1649: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Animation.html
+score  1 doc  280: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Grinnell_College.html
+score  1 doc  751: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Wait_(command).html
+score  1 doc 1666: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cryptanalysis_of_the_Enigma.html
+score  1 doc  754: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Test_(Unix).html
+score  1 doc 1683: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer.html
+score  1 doc 1693: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Blaise_Pascal.html
+score  1 doc 1694: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Abacus.html
+score  1 doc 1695: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Digital_computer.html
+-----------------------------------------------
+KEY WORDS:> Query: attended or hadham or giangola or translucency appetizers or quanta 
+Matches 12 documents (ranked):
+score 2 doc   69: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Round-robin_scheduling.html
+score 1 doc  971: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/X11.html
+score 1 doc 1063: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/X_Window_System.html
+score 1 doc 1042: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Apple%2c_Inc.html
+score 1 doc  415: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/IBM.html
+score 1 doc  417: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/EBay.html
+score 1 doc  504: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Yahoo%21.html
+score 1 doc  583: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Booz_Allen_Hamilton.html
+score 1 doc 1109: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Comparison_of_integrated_development_environments.html
+score 1 doc 1122: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/QDevelop.html
+score 1 doc 1126: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/KDevelop.html
+score 1 doc 1128: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Geany.html
+-----------------------------------------------
+KEY WORDS:> Query: sawhorse mutexes 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: quadrangulate 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: transflux vorvick or sulphoarsenious or nonthreaded busing 
+Matches 3 documents (ranked):
+score 2 doc 511: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Desegregate.html
+score 1 doc 509: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Alcohol_abuse.html
+score 1 doc 598: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Supreme_Court_of_the_United_States.html
+-----------------------------------------------
+KEY WORDS:> Query: holliday or velarised 
+Matches 4 documents (ranked):
+score 2 doc  222: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Saint_Anselm_College.html
+score 1 doc 1462: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Renewable_energy.html
+score 1 doc 1480: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Acoustical_engineering.html
+score 1 doc  860: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Anglo-Saxon_language.html
+-----------------------------------------------
+KEY WORDS:> Query: finlandia piranha and stateless cupitt styley 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: curiate and policer or unrebellious 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: sutra pentaiodide fortnightly 
+Matches 1 documents (ranked):
+score 1 doc 1576: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Philosophy_of_mind.html
+-----------------------------------------------
+KEY WORDS:> Query: eliphalet cynomorphic or flytail or deathbed 
+Matches 7 documents (ranked):
+score 12 doc 246: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Union_Dutchmen.html
+score  1 doc 244: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Union_Dutchwomen_ice_hockey.html
+score  1 doc 245: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Union_Dutchmen_ice_hockey.html
+score  1 doc 232: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Achilles_Rink.html
+score  1 doc 424: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Charles_Augustus_Aiken.html
+score  1 doc 438: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Joseph_Smith.html
+score  1 doc 603: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Christianization.html
+-----------------------------------------------
+KEY WORDS:> Query: coquand durkheim vindication zecchini 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: tuberosity mkfs bioprocessing 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: cyn massage penh or tires biosensor 
+Matches 6 documents (ranked):
+score 5 doc  187: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Graceful_degradation.html
+score 2 doc 1439: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Automotive_engineering.html
+score 2 doc 1655: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_graphics.html
+score 1 doc  283: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Claremont_McKenna_College.html
+score 1 doc 1441: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Transport.html
+score 1 doc  713: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/SCO_OpenServer.html
+-----------------------------------------------
+KEY WORDS:> Query: preventive or heights and bakhtin proauthority 
+Matches 33 documents (ranked):
+score 12 doc  284: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Boston_College.html
+score  9 doc  539: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Manhattan.html
+score  8 doc 1078: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dennis_Ritchie.html
+score  2 doc  123: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Associative_array.html
+score  2 doc  613: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Long_Island.html
+score  2 doc   20: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/B-tree.html
+score  1 doc  252: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Rensselaer_Engineers.html
+score  1 doc   81: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/AVL_tree.html
+score  1 doc  294: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Georgetown_Hoyas.html
+score  1 doc  301: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Columbia_Lions.html
+score  1 doc  336: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/F.html
+score  1 doc  396: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Shonda_Rhimes.html
+score  1 doc  481: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Salmon_P.html
+score  1 doc  538: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Metropolitan_Opera.html
+score  1 doc   13: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Fibonacci_heap.html
+score  1 doc  549: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/New_England.html
+score  1 doc  586: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/V-12_Navy_College_Training_Program.html
+score  1 doc  224: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/New_England_College.html
+score  1 doc  703: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Timeline_of_operating_systems.html
+score  1 doc  856: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Operating_systems_timeline.html
+score  1 doc  887: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Bell_Laboratories.html
+score  1 doc  890: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Kludge.html
+score  1 doc  970: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/GUI.html
+score  1 doc 1011: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/AT%26T_Bell_Labs.html
+score  1 doc 1064: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Graphical_user_interface.html
+score  1 doc 1074: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Bell_Labs.html
+score  1 doc  243: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Yale_Bulldogs_men%27s_ice_hockey.html
+score  1 doc 1144: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Englewood_Cliffs%2c_NJ.html
+score  1 doc 1242: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unicode.html
+score  1 doc 1276: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/IBM_PC.html
+score  1 doc 1495: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Wearable_computer.html
+score  1 doc 1644: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Simulation.html
+score  1 doc 1658: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Statistics.html
+-----------------------------------------------
+KEY WORDS:> Query: levinsohn lzo starfighter ambulatory or brachystomous 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: miserable pneumodynamic or unstereotyped 
+Matches 4 documents (ranked):
+score 1 doc  621: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Daniel_Webster.html
+score 1 doc  931: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Software_engineering.html
+score 1 doc 1398: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Transhumanism.html
+score 1 doc 1629: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Edsger_Dijkstra.html
+-----------------------------------------------
+KEY WORDS:> Query: hurtalt saveframe mediaresearch traubel and misdeeds 
+No documents match
+-----------------------------------------------
+KEY WORDS:> Query: sameer boyfriends pasley or anomalogonatae olivares 
+Matches 1 documents (ranked):
+score 1 doc 1482: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Tissue_engineering.html
+-----------------------------------------------
+KEY WORDS:> Query: cribbons 
+Matches 1 documents (ranked):
+score 1 doc 384: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Michael_Moriarty.html
+-----------------------------------------------
+KEY WORDS:> Query: pythonomorpha 
+No documents match
+-----------------------------------------------
+KEY WORDS:> 
+
+### Test using invalid queries
+'./querier cs50_crawler_output cs50_index_file < testqueries2' output:
+Error: 'and' cannot be first
+Error: 'or' cannot be first
+Error: 'and' cannot be last
+Error: 'or' cannot be first
+Error: 'and' and 'or' cannot be adjacent
+Error: 'or' and 'and' cannot be adjacent
+Error: bad character '1' in query
+Error: 'and' cannot be first
+Error: 'or' cannot be last
+KEY WORDS:> Query: and 
+KEY WORDS:> Query: or 
+KEY WORDS:> Query: dartmouth and 
+KEY WORDS:> Query: or dartmouth 
+KEY WORDS:> Query: computer and or science 
+KEY WORDS:> Query: computer or and science 
+KEY WORDS:> KEY WORDS:> Query: and dartmouth 
+KEY WORDS:> Query: dartmouth or 
+KEY WORDS:> 
+
+### Compare with 'correct' results found in cs50 tse-output directory
+### testqueries contains the same query searches that were done in the cs50_querier_output file
+./querier cs50_crawler_output cs50_index_file < testqueries > queryresults
+
+'cat queryresults' output:
+KEY WORDS:> Query: dartmouth 
+Matches 6 documents (ranked):
+score 7 doc  2: http://old-www.cs.dartmouth.edu/~xia/
+score 7 doc 16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score 4 doc 11: http://old-www.cs.dartmouth.edu/~xia/cs60/assignments.html
+score 4 doc  9: http://old-www.cs.dartmouth.edu/~xia/cs60/index.html
+score 2 doc  5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score 1 doc  1: http://old-www.cs.dartmouth.edu/~cs50/
+-----------------------------------------------
+KEY WORDS:> Query: paper 
+Matches 6 documents (ranked):
+score 5 doc 15: http://old-www.cs.dartmouth.edu/~xia/publications.html
+score 3 doc  2: http://old-www.cs.dartmouth.edu/~xia/
+score 3 doc 16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score 2 doc  5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score 1 doc  7: http://old-www.cs.dartmouth.edu/~xia/cs69/readings.html
+score 1 doc  8: http://old-www.cs.dartmouth.edu/~xia/cs69/schedule.html
+-----------------------------------------------
+KEY WORDS:> 
+
+'cat cs50_querier_output' output:
+$ ./querier ~cs50/data/tse-output/cs50-3 ~cs50/data/tse-output/cs50-index3
+KEY WORDs:> dartmouth
+Query: dartmouth 
+Matches 6 documents (ranked):
+score   7 doc   2: http://old-www.cs.dartmouth.edu/~xia/
+score   7 doc  16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score   4 doc   9: http://old-www.cs.dartmouth.edu/~xia/cs60/index.html
+score   4 doc  11: http://old-www.cs.dartmouth.edu/~xia/cs60/assignments.html
+score   2 doc   5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score   1 doc   1: http://old-www.cs.dartmouth.edu/~cs50/
+-----------------------------------------------
+KEY WORDs:> paper
+Query: paper 
+Matches 6 documents (ranked):
+score   5 doc  15: http://old-www.cs.dartmouth.edu/~xia/publications.html
+score   3 doc   2: http://old-www.cs.dartmouth.edu/~xia/
+score   3 doc  16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score   2 doc   5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score   1 doc   7: http://old-www.cs.dartmouth.edu/~xia/cs69/readings.html
+score   1 doc   8: http://old-www.cs.dartmouth.edu/~xia/cs69/schedule.html
+-----------------------------------------------
+KEY WORDs:> 

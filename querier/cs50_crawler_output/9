@@ -1,0 +1,139 @@
+http://old-www.cs.dartmouth.edu/~xia/cs60/index.html
+2
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 60</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="pure-menu-selected">
+            <i class="fa fa-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="">
+            <i class="fa fa-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class=" ">
+            <i class="fa fa-folder-open"></i><a href="assignments.html">Assignments</a>
+            </li>
+            <li class=" ">
+            <i class="fa fa-flask"></i><a href="project.html">Project</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/network.jpg" height=120px size=100%></img>
+          </p> 
+          <h1 class="pure-u-3-4 l-centered">CS 60: Computer Networks</h1>     
+             <p>Lecture: MWF, 1:45pm - 2:50pm, Life Sciences Center 201 <br/>
+                X-hour: Thur., 1:00pm - 1:50pm, Life Sciences Center 201 <br/>
+                <i><a href="https://piazza.com/dartmouth/spring2016/cosc06001sp16">Sign up on Piazza!</a></i><br/><br/>
+                Lecturer: <a href="http://www.cs.dartmouth.edu/~xia/">Xia Zhou</a> (xia@cs.dartmouth.edu)<br/>
+                Office Hour: 5pm - 6pm on Friday, Sudikoff 208<br/><br/>
+                TA: <a href="mailto:Xi.Xiong.GR@dartmouth.edu">Xi Xiong</a>, <a href="mailto:Yuan.Tian.GR@dartmouth.edu">Yuan Tian</a> <br/>
+                Section Leaders: <a href="mailto:ethan.yu@dartmouth.edu">Ethan Yu</a>, <a href="mailto:yifei.xie.16@dartmouth.edu">Yifei Xie</a>, and <a href="mailto:Hao.Chang.16@dartmouth.edu">Hao Chang</a><br/>
+                Lab Hour: 6pm - 8pm on Wednesday and Thursday, 8pm - 10pm Sunday, Sudikoff Lab 003
+              </p>
+        </div>
+        <a name="#home"></a>
+        <!--
+        <div class="header">
+          <h1>Course Description</h1>
+        </div>
+        -->
+        <div class="content">
+          <p>Ever wondered what makes the Internet tick and social networks buzz?  Want to gain programming skills that would allow you to implement the Internet? If so this is the right course for you.</p>
+
+          <p>This course focuses on the communications protocols used in computer networks: their functionality, specification, verification, implementation, and performance; and how protocols work together to provide more complex services. Aspects of network architectures are also considered. Laboratory projects are an integral part of the course in which networking concepts are explored in depth.</p>
+
+          <p>We will cover topics including network applications (e.g., Web, Email, peer-to-peer applications such as BitTorrent, cloud storage services such as Dropbox), TCP and UDP transport protocols, the IP protocol, routing algorithms, medium access layer (e.g., IEEE 802.11 wireless MAC), physical layer over wired and wireless medium, and Internet infrastructure such as domain name system (DNS) - these comprise the Internet's core components.</p>
+
+          <p>The course breaks down into lectures, assignments, and a course project. There are no exams for this class: no mid term and no final. We focus on network programming. The projects will run for the last two weeks of the course. There will be no lectures during the last two weeks of the course, so that students can fully focus on their group projects. The projects will be organized around a design review, code review and demo or die event.</p>
+
+          <h3><i class="fa fa-hand-o-right"></i> Prerequisites</h3>
+          <p>CS 50. We expect you have strong C and UNIX (shell programming, gdb, cvs, process, threads) skills (taught in CS 50) to take this course. All programming assignments and project are in C and Unix.   
+          </p>
+
+          <h3><i class="fa fa-hand-o-right"></i> Textbooks</h3>
+          <p>James Kurose and Keith Ross. <a href="http://wps.pearsoned.com/ecs_kurose_compnetw_6/">Computer Networking: A Top-Down Approach.</a> The sixth edition.</p>
+          References:
+          <ul>
+            <li>Larry Peterson and Bruce Davie. <a href="http://www.amazon.com/Computer-Networks-Fifth-Edition-Networking/dp/0123850592">Computer Networks: A Systems Approach.</a></li>
+            <li>Andrew S. Tanenbaum. Computer Networks.</li>
+          </ul>
+
+          <h3><i class="fa fa-hand-o-right"></i> Grading Policy</h3>
+
+          <b><i class="fa fa-users"></i> Class and lab participation: 10% </b><br/>
+          <p>There will be a discussion in class regarding the course reading material. Active involvement in the discussion, the lectures, and the lab will help toward the class contribution part of the grade.</p>
+
+          <b><i class="fa fa-folder-open"></i> Assignments: 60%</b><br/>
+          <p>There are six weekly laboratory assignments over the first seven weeks. 10% is given for each lab. Some labs are harder than others but we have a flat grading scheme across all labs. These assignments are to be done individually. The schedule is online, so plan ahead and stay on schedule. </p>
+
+          <p>We will provide source code solutions to all labs. The TA will grade your solutions and write up a grade sheet on the correctness, simplicity, and clarity of your code. The instructor will review the TA's grading and grade sheets. Your grade and grade sheet and our source code solution will be returned to you one week after the lab assignment is turned in. If you have questions about the grade or grade sheet please talk to the TA first. If you are still have concerns see the instructor. Please do not distribute the source code solutions we provide you with (see honor code).
+
+          <p><i>Important</i>: All assignments will be submitted using svn. Each submission must have a README and makefile. Submitted code that segfaults will not be graded. Students will have to fix the code and resubmit for grading. Students can either take an extension (see below) or pay the late submission tax (see policy for late assignments). If segfaulted code is not fixed the student will receive a zero grade for the lab. This is a senior class and we expect good working code.</p>
+
+          <b><i class="fa fa-flask"></i> Project: 30% </b><br/>
+          <p>The project is made up of a small team (4 - 5 people) and requires strong collaboration and a problem solving mindset to get the job done. The instructor will put the teams together with each member being responsible to deliver against a part of the overall system design, implementation, testing and integration.  The goals of this activity are to help you develop the confidence, skills, and habits necessary to write large computer programs while part of a multi-person team. You will become conversant in software engineering paradigms, and be exposed to various public-domain and open source tools that make the software development process easier. In addition, you will develop vital skills in self-directed learning, problem solving, and communication. The project will have a design and code review as well as the demo. A project report that captures the design and implementation will be submitted as part of the assessment.</p>
+
+
+          <h3><i class="fa fa-hand-o-right"></i> Dartmouth Honor Code</h3>
+          <p>The assignments and project are all about writing great code - shell scripts and C. Here is the policy for joint work in CS 60:</p>
+
+          <p>First, you may discuss and help each other (e.g., help in debugging, sharing knowledge, giving moral support, getting coffee, etc.) - I promote that as the type of team spirit and joint problem solving skills that is the essence of the course and necessary to do a great project. However, you cannot work jointly on coding up (i.e., writing) your programming assignments. You can talk, discuss solutions, even show snippets of code to solve a problem but you cannot jointly write or share code.</p> 
+
+          <p>The project phase is different. You can work jointly on writing code. But you cannot take code from anywhere (e.g., the web or any other source). It has to be the joint product of the team. One caveat: no sharing of code between teams. As above, teams can discuss code, show each other snippets on the white board, but not share source code. The project phase of the course is a friendly competition so there isn't a lot of incentive to share code</p>
+
+          <p>We hate to state this since you all know it but it is necessary to be explicit here:</p>
+
+          <blockquote>You should not under any circumstance look at or use code from previous terms' assignments and projects. We have&nbsp; smart shell scripts that can find similar code. The message is - please don't make life unpleasant for all of us by breaking these rules. The penalties for cheating at Dartmouth are severe, starting with suspension and including expulsion. If you are unsure about anything, please ask.
+          </blockquote>
+
+          <p>We take the Honor Code very seriously, so please, if you are unclear on any matter regarding this policy, do not hesitate to see me in office hours, and I will be more than happy to answer your questions.</p>
+
+          <p style="color:#1f8dd6">* This course is based upon the previous course designed by Prof. Andrew Campbell. This instructor deeply appreciates his efforts on the previous course design.</p>
+        </div>
+
+        <div class="legal pure-g-r">
+          <div class="pure-u-2-5">
+            <div class="l-box">
+              <ul class="legal-links">
+                <li><a href="http://www.cs.dartmouth.edu">CS@Dartmouth</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+  </html>
+

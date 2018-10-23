@@ -1,0 +1,62 @@
+./indextest.sh
+Testing indexer program with invalid parameters:
+'./indexer onlyoneargument' output:
+usage: ./indexer pageDirectory indexFilename
+
+'./indexer one two threeargs' output:
+usage: ./indexer pageDirectory indexFilename
+
+'./indexer ../ file' output:
+'../' is not a valid crawler output directory
+
+'./indexer crawler-output-small crawler-output-small' output:
+unwritable file 'crawler-output-small/'
+
+Indexing 'crawler-output-small' file, which contains the crawler output of 7 webpages, and storing the indexer file under the name 'file'...
+
+Indexer program complete
+
+First 10 lines of 'file':
+accidentally 6 1 
+legal 6 1 
+sequent 5 1 
+globe 4 1 
+quarterback 4 2 
+applicants 4 1 
+richard 4 7 5 1 
+ais 2 1 3 1 4 1 5 1 6 1 7 2 
+day 2 1 4 1 
+include 2 2 3 1 4 18 5 12 6 10 7 1 
+
+Sorting file and cs50_indexer_file, which is the ouput file for crawler-output-small provided in the cs50 directory, so they are in the same order...
+
+Sort complete
+
+Comparing 'file' with 'cs50_indexer_file'...
+'diff --brief file cs50_indexer_file' output (should have no output):
+–––End of diff output–––
+
+Testing indextest program with invalid parameters:
+(indextester reads and builds an indexer from the old file and writes it to a new file, so the two files should have the same content)
+
+'./indextest onlyoneargument' output:
+usage: ./indextest oldIndexFilename newIndexFilename
+
+'./indextest one two threeargs' output:
+usage: ./indextest oldIndexFilename newIndexFilename
+
+'./indextest invalidfile file2' output:
+invalidfile is unreadable
+
+'./indextest file crawler-output-small' output:
+crawler-output-small/ is unwriteable
+
+Running indextest with 'file' as the old file and 'file2' as the new file...
+
+indextest program complete
+
+Sorting 'file2' so its in the same order as 'file'...
+Comparing 'file' with 'file2'...
+'diff --brief file.sorted file2.sorted' output (should have no output):
+–––End of diff output–––
+

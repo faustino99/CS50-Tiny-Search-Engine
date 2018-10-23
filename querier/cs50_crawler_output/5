@@ -1,0 +1,108 @@
+http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+2
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS69/169</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="pure-menu-selected">
+            <i class="icon-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="">
+            <i class="icon-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class=" ">
+            <i class="icon-bookmark"></i><a href="readings.html">Readings</a>
+            </li>
+            <li class=" ">
+            <i class="icon-gamepad"></i><a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/wireless.png" height=200px size=100%></img>
+          </p> 
+          <h1 class="pure-u-3-4 l-centered">CS 69/169: All Things Wireless</h1>
+              
+             <p>Lecturer: <a href="http://www.cs.dartmouth.edu/~xia/">Xia Zhou</a><br/>
+                Time: TuTh, 2:00pm - 3:50pm <br/>
+                Room: Kemeny Hall 108 <br/>
+                Office Hour: 5pm - 6pm Friday, Sudikoff 208<br/>
+                Email: xia@cs.dartmouth.edu <br/>
+                <br/>
+                <i><a href="https://piazza.com/dartmouth/fall2015/cosc69169">Sign up on Piazza</a>!</i>
+              </p>
+        </div>
+        <a name="#home"></a>
+        <div class="header">
+          <h1>Course Description</h1>
+        </div>
+        <div class="content">
+          <p>CS 69/169 is a networking seminar, covering a broad range of advanced topics in wireless networking and mobile systems. For each topic, we will study both conventional perspectives and recent research trends, focusing on wireless networks. Students will learn key principles in networking research, understand the state of the art in this area, and gain experiences of carrying out original research through class projects. The end goal is to generate publishable results by the end of the term. In addition, students will practice their skills in paper reading/writing and public presentation in the form of paper critics, class discussion, project report and presentation.</p>
+          <p>As a research seminar, this course is based on research papers in top-tier conferences. No particular textbooks are required, but following textbooks are good references for you to refresh networking background and better understand papers.  </p>
+          <ul>
+            <li>Theodore Rappaport. <a href="http://authors.phptr.com/rappaport/index.html">Wireless Communications: Principles and Practice.</a> </li>
+            <li>William Stallings. <a href="http://williamstallings.com/WirelessCommunications/">Wireless Communications and Networks.</a> </li>
+            <li>Pei Zheng, Larry L. Peterson, Bruce S. Davie, and Adrian Farrel. Wireless Networking Complete.</li>
+            <li>James Kurose and Keith Ross. Computer Networking: A Top-Down Approach.</li>
+            <li>Larry Peterson and Bruce Davie. Computer Networks: A Systems Approach.</li>
+            <li>Andrew S. Tanenbaum. Computer Networks.</li>
+          </ul>
+
+          <h3>Prerequisites</h3>
+          <p>Because it is a higher-level class, we assume that students already have a solid understanding on networking basics. There are multiple ways of demonstrating a networking background, including taking undergraduate networking class CS 60 or equivalent classes, and experiences of working on networking related projects. Course project is an important part of this class. Students must have good programming skills and project experiences. 
+          </p>
+
+          <h3>Grading Policy</h3>
+          <p>
+            Project: 70% <br/>
+            Class presentation: 15% <br/>
+            Essay: 10% <br/>
+            Class participation: 5% <br/>   
+          </p>
+        </div>
+
+        <div class="legal pure-g-r">
+          <div class="pure-u-2-5">
+            <div class="l-box">
+              <ul class="legal-links">
+                <li><a href="http://www.cs.dartmouth.edu">CS@Dartmouth</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+  </html>
+

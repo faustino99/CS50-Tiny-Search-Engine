@@ -1,0 +1,22 @@
+$ ./querier ~cs50/data/tse-output/cs50-3 ~cs50/data/tse-output/cs50-index3
+KEY WORDs:> dartmouth
+Query: dartmouth 
+Matches 6 documents (ranked):
+score   7 doc   2: http://old-www.cs.dartmouth.edu/~xia/
+score   7 doc  16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score   4 doc   9: http://old-www.cs.dartmouth.edu/~xia/cs60/index.html
+score   4 doc  11: http://old-www.cs.dartmouth.edu/~xia/cs60/assignments.html
+score   2 doc   5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score   1 doc   1: http://old-www.cs.dartmouth.edu/~cs50/
+-----------------------------------------------
+KEY WORDs:> paper
+Query: paper 
+Matches 6 documents (ranked):
+score   5 doc  15: http://old-www.cs.dartmouth.edu/~xia/publications.html
+score   3 doc   2: http://old-www.cs.dartmouth.edu/~xia/
+score   3 doc  16: http://old-www.cs.dartmouth.edu/~xia/index.html
+score   2 doc   5: http://old-www.cs.dartmouth.edu/~xia/cs69/index.html
+score   1 doc   7: http://old-www.cs.dartmouth.edu/~xia/cs69/readings.html
+score   1 doc   8: http://old-www.cs.dartmouth.edu/~xia/cs69/schedule.html
+-----------------------------------------------
+KEY WORDs:> 

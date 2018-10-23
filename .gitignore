@@ -1,0 +1,47 @@
+# TSE .gitignore file
+
+# project specific files
+# indexer directory
+indexer/*.sorted
+indexer/file2
+indexer/file
+indexer/indexer
+indexer/indextest
+
+# crawler directory
+crawler/crawler
+crawler/crawlertest
+
+# querier directory
+querier/querier
+querier/queriertest
+querier/queryresults
+
+# CS50 recommended .gitignore_global file
+# to install it:
+#  cp ~cs50/.gitignore_global ~
+#  git config --global core.excludesfile ~/.gitignore_global
+
+# core dumps
+core
+
+# Object files and libraries
+*.o
+*.a
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# debugger symbols
+*.dSYM
+
+# MacOS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V*
+.Trashes

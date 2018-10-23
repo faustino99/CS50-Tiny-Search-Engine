@@ -1,0 +1,183 @@
+http://old-www.cs.dartmouth.edu/~xia/cs69/readings.html
+3
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS69/169</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="">
+            <i class="icon-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="">
+            <i class="icon-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class="pure-menu-selected">
+            <i class="icon-bookmark"></i><a href="readings.html">Readings</a>
+            </li>
+            <li class=" ">
+            <i class="icon-gamepad"></i><a href="projects.html">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/wireless.png" height=200px size=100%></img>
+          </p> 
+        </div>
+
+        <a name="#readings"></a>
+        <div class="header">
+          <h1>Readings</h1>
+        </div>
+        <div class="content">
+          <p>
+          Don't panic. You do not need to read all papers. Some papers just provide background to help you understand the topic and the paper you plan to present. 
+          </p>
+          <h4>Wireless Communication</h4>
+          <ul>
+            <li><a href="./ARY95.pdf">[ARY95]</a> J. Andersen, T. Rappaport, and S. Yoshida. Propagation Measurements and Models for Wireless Communications Channels. IEEE Communications Magazine. 1995.</li>
+            <li> <a href="http://sing.stanford.edu/cs303-sp10/papers/p442-aguayo.pdf">[ABB+04]</a> D. Aguayo et al. Link-level Measurements from an 802.11b Mesh Network. SIGCOMM. 2004.</li>
+            <li><a href="http://www.stanford.edu/~skatti/pubs/mobicom10-fd.pdf">[CJS+10]</a> Jung Il Choi et al. Achieving Single Channel, Full Duplex Wireless Communication. MobiCom. 2010.</li>
+            <li><a href="http://sing.stanford.edu/pubs/mobicom11-duplex.pdf">[JCK+11]</a> Mayank Jain eta al. Practical, Real-time, Full Duplex Wireless. MobiCom. 2011.</li>
+            <li><a href="http://web.stanford.edu/~skatti/pubs/sigcomm12-picasso.pdf">[HMK12]</a> Steven Hong, Jeffrey Mehlman, and Sachin Katti. Picasso: Flexible RF and Spectrum Slicing. SIGCOMM. 2012.</li>
+            <li><a href="http://web.stanford.edu/~skatti/pubs/sigcomm13-fullduplex.pdf">[BMK13]</a> Dinesh Bharadia, Emily McMilin, and Sachin Katti. Full Duplex Radios. SIGCOMM. 2013.</li>
+            <li><a href="http://web.stanford.edu/~skatti/pubs/nsdi14-mimo.pdf">[BK14-NSDI]</a> Dinesh Bharadia and Sachin Katti. Full Duplex MIMO Radios. NSDI. 2014.</li>
+            <li><a href="http://www.stanford.edu/~skatti/pubs/sigcomm14-ff.pdf">[BK14]</a> Dinesh Bharadia and Sachin Katti. FastForward: Fast and Constructive Full Duplex Relays. SIGCOMM. 2014.</li>
+
+
+            <li><a href="http://www.ece.gatech.edu/research/labs/bwn/surveys/radio.pdf">[ALV+06]</a> I. Akyildiz et al. NeXt generation/dynamic spectrum access/cognitive radio wireless networks: A survey. Computer Networks Journal (ELSEVIER). 2006. </li>
+            <li> <a href="http://www.cs.ucsb.edu/~htzheng/publications/pdfs/lb.pdf">[CZ05]</a> L. Cao, and H. Zheng. Spectrum allocation in ad hoc networks via local bargaining. SECON. 2005. </li>
+            <li><a href="http://www.cs.dartmouth.edu/~xia/papers/mobicom08_veritas.pdf">[ZGS+08]</a> X. Zhou et al. eBay in the Sky: strategy-proof wireless spectrum auctions. MobiCom. 2008. </li>
+            <li><a href="http://cs.ucsb.edu/~zengbin/files/mobihoc12-Gelato.pdf">[YZZ+12]</a> Lei Yang et al. Enforcing Dynamic Spectrum Access with Spectrum Permits. MobiHoc. 2012.</li>
+            <li><a href="http://pages.cs.wisc.edu/~tzhang/papers/vscope_mobicom2014.pdf">[ZLB14]</a> T. Zhang, N. Leng, and S. Banerjee. Vehicle-based Measurement Framework for Enhancing Whitespace Spectrum Databases. MobiCom. 2014. </li>
+            <li><a href="http://www.cs.dartmouth.edu/~xia/papers/hotw14-specmonitor.pdf">[NZZ+14]</a> A. Nika et al. Towards Commoditized Real-time Spectrum Monitoring. HotWireless. 2014.</li>
+            <li><a href="http://pages.cs.wisc.edu/~tzhang/papers/snoopy_hotmobile2015.pdf">[ZPL+15]</a> Tan Zhang et al. A Wireless Spectrum Analyzer in Your Pocket. HotMobile. 2015.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2699348">[ARC+15]</a> Andreas Achtzehn et al. CrowdREM: Harnessing the Power of the Mobile Crowd for Flexible Wireless Network Monitoring. HotMobile. 2015.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-shi.pdf">[SBK15]</a> L. Shi, P. Bahl, and D. Katabi. Beyond Sensing: Multi-GHz Realtime Spectrum Analytics. NSDI. 2015.</li>
+
+
+            <li><a href="http://www.shihada.com/F11-344/papers/interferencecancel.pdf">[HAW08]</a> D. Halperin, T. Anderson, D. Wetherall. Taking the Sting out of Carrier Sense: Interference Cancellation for Wireless LANs. MobiCom. 2008.</li>
+            <li><a href="http://ccr.sigcomm.org/online/files/p159-gollakotaA.pdf">[GK08]</a> S. Gollakota and D. Katabi. ZigZag Decoding: Combating Hidden Terminals in Wireless Networks. SIGCOMM. 2008.</li>
+            <li><a href="http://homes.cs.washington.edu/~gshyam/Papers/IAC.pdf">[GPK09]</a> S. Gollakota, S. Perli and D. Katabi. Interference Alignment and Cancellation. SIGCOMM. 2009. </li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi13/nsdi13-final180.pdf">[JHK13]</a> K. Joshi, S. Hong, and S. Katti. PinPoint: Localizing Interfering Radios. NSDI. 2013.</li>
+            <li><a href="http://www.mit.edu/~swarun/papers/lteye-sigcomm2014.pdf">[KHK+14]</a> Swarun Kumar et al. LTE Radio Analytics Made Easy and Accessible. SIGCOMM. 2014. </li>
+            <li><a href="http://www.cs.dartmouth.edu/~xia/papers/sigmetrics13_cg.pdf">[ZZW+13]</a> X. Zhou et al. Practical Conflict Graphs for Dynamic Spectrum Distribution. SIGMETRICS. 2013. </li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p566-chenA.pdf">[CQZ+15]</a> Bo Chen et al. AirExpress: Enabling Seamless In-band Wireless Multi-hop Transmission. MobiCom. 2015.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-chen.pdf">[CYK15]</a> Bo Chen et al. FlexRadio: Fully Flexible Radios and Networks. NSDI. 2015.</li>
+
+
+            <li><a href="http://www.cs.dartmouth.edu/~xia/papers/sigcomm12_beam3d.pdf">[ZZZ+12]</a> X. Zhou et al. Mirror Mirror on the Ceiling: Flexible Wireless Links for Data Centers. SIGCOMM 2012.</li>
+            <li><a href="http://www.ece.ucsb.edu/wcsl/Publications/Zhinous_Mobicom14.pdf">[ZZM+14]</a> Y. Zhu et al. Demystifying 60GHz Outdoor Picocells. MobiCom. 2014.</li>
+            <li><a href="https://www.cs.ucsb.edu/~ravenben/publications/pdf/60gradar-mobicom15.pdf">[ZZZ+15]</a> Yanzi Zhu et al. Reusing 60GHz Radios for Mobile Radar Imaging. MobiCom. 2015.</li>
+            <li><a href="http://xyzhang.ece.wisc.edu/papers/SSur_SIGMETRICS_60GHzLink.pdf">[SVZ+15]</a> Sanjib Sur et al. 60 GHz Indoor Networking through Flexible Beams: A Link-Level Profiling. SIGMETRICS. 2015.</li>
+
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-li_liqun.pdf">[LHP+14]</a> Liqun Li et al. Epsilon: A Visible Light Based Positioning System. NSDI. 2014.</li>
+            <li><a href="https://web.eecs.umich.edu/~prabal/pubs/papers/kuo14luxapose.pdf">[KPH+14]</a> Ye-Sheng Kuo, Pat Pannuto, Ko-Jen Hsiao, and Prabal Dutta. Luxapose: Indoor Positioning with Mobile Phones and Visible Light. MobiCom. 2014. </li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2699343.2699354">[LLS+15]</a> Jiangtao Li et al. Retro-VLC: Enabling Battery-free Duplex Visible Light Communication for Mobile and IoT Applications. HotMobile. 2015.</li>
+            <li><a href="http://research.microsoft.com/pubs/240761/mobi008f-yangA.pdf">[YWZ+15]</a> Zeyu Wang et al. Wearables Can Afford: Lightweight Visible Light Communication for Indoor Positioning. MobiSys. 2015.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2742651">[LLT+15]</a> Hui-Yu Lee et al. RollingLight: Enabling Line-of-Sight Light-to-Camera Communications. MobiSys. 2015.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p345-zhangA.pdf">[ZTZ+15]</a> Chi Zhang et al. Extending Mobile Interaction Through NearField Visible Light Sensing. MobiCom. 2015.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p331-liA.pdf">[LAT+15]</a> Tianxing Li et al. Human Sensing Using Visible Light Communication. MobiCom. 2015.</li>
+            <li><a href="http://networks.rice.edu/files/2015/08/CP-5-VLC-1ifslyp.pdf">[CCS+15]</a> Jiska Classen et al. The Spy Next Door: Eavesdropping on High Throughput Visible Light Communications. VLCS. 2015. </li>
+
+
+            <li> <a href="http://conferences.sigcomm.org/sigcomm/2013/papers/sigcomm/p39.pdf">[LPT+13]</a> V. Liu et al. Ambient Backscatter: Wireless Communication Out of Thin Air. SIGCOMM. 2013. </li>
+            <li><a href="http://homes.cs.washington.edu/~gshyam/Papers/wifibackscatter.pdf">[KPG+14]</a> B. Kellogg et al. Wi-Fi Backscatter: Internet Connectivity for RF-Powered Devices. SIGCOMM. 2014.</li>
+            <li><a href="https://homes.cs.washington.edu/~gshyam/Papers/turbocharge.pdf">[PLG+14]</a> Aaron N. Parks et al. Turbocharging Ambient Backscatter Communication. SIGCOMM. 2014.</li>
+            <li><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p283.pdf">[BJK+15]</a> Dinesh Bharadia, Kiran Joshi, Manikanta Kotaru, Sachin Katti. BackFi: High Throughput WiFi Backscatter. SIGCOMM. 2015.</li>
+            <li><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p255.pdf">[HZG15]</a> Pan Hu, Pengyu Zhang, Deepak Ganesan. Laissez-Faire: Fully asymmetric backscatter communication. SIGCOMM. 2015.</li>
+
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-roy.pdf">[RGC15]</a> Nirupam Roy, Mahanth Gowda, and Romit Roy Choudhury. Ripple: Communicating through Physical Vibration. NSDI. 2015.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2632053">[PHW+14]</a> Tobias Grosse-Puppendahl et al. Capacitive Near-Field Communication for Ubiquitous Interaction and Perception. UbiComp. 2014.</li>
+            <li><a href="http://dl.acm.org/authorize.cfm?key=N88115">[JFY+14]</a> Weiwei Jiang et al. Pulse: Low Bitrate Wireless Magnetic Communication for Smartphones. UbiComp. 2014.</li>
+
+            
+          </ul>
+
+
+          <h4>Wireless Systems and Applications</h4>
+          <ul>
+
+            <li><a href="https://web.eecs.umich.edu/~prabal/pubs/papers/kuo14luxapose.pdf">[KPH+14]</a> Ye-Sheng Kuo, Pat Pannuto, Ko-Jen Hsiao, and Prabal Dutta. Luxapose: Indoor Positioning with Mobile Phones and Visible Light. MobiCom. 2014. </li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-li_liqun.pdf">[LHP+14]</a> Liqun Li et al. Epsilon: A Visible Light Based Positioning System. NSDI. 2014.</li>
+            <li><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p297.pdf">[AVK+15]</a> Omid Abari et al. Caraoke: An E-Toll Transponder Network for Smart Cities. SIGCOMM. 2015.</li>
+            <li><a href="http://conferences.sigcomm.org/sigcomm/2015/pdf/papers/p269.pdf">[KJB+15]</a> Manikanta Kotaru et al. SpotFi: Decimeter Level Localization Using WiFi. SIGCOMM. 2015.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p537-xiongA.pdf">[XSJ15]</a> Jie Xiong, Karthikeyan Sundaresan, and Kyle Jamieson. ToneTrack: Leveraging Frequency-Agile Radios for Time-Based Indoor Wireless Localization. MobiCom. 2015.</li>
+
+
+            <li> <a href="http://wisee.cs.washington.edu/wisee_paper.pdf">[PGG+13]</a> Q. Pu et al. Whole-Home Gesture Recognition Using Wireless Signals. MobiCom. 2013. </li>
+            <li><a href="http://people.csail.mit.edu/jue_w/Papers/RF-IDraw_SIGCOMM14.pdf">[WVK14]</a> J. Wang, D. Vasisht, and D. Katabi. RF-IDraw: Virtual Touch Screen in the Air Using RF Signals. SIGCOMM. 2014.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-adib.pdf">[AKK+14]</a> F. Adib et al. 3D Tracking via Body Radio Reflections. NSDI. 2014.</li>
+            <li><a href="http://homes.cs.washington.edu/~gshyam/Papers/wision.pdf">[HNG14]</a> Donny Huang, Rajalakshmi Nandakumar, and Shyamnath Gollakota. Feasibility and Limits of Wi-Fi Imaging. SenSys. 2014.</li>
+            <li><a href="http://conferences.sigcomm.org/hotnets/2013/papers/hotnets-final75.pdf">[BJK13]</a> Dinesh Bharadia, Kiran Raj Joshi, and Sachin Katti. Full Duplex Backscatter. HotNets. 2013.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-kellogg.pdf">[KTG14]</a> Bryce Kellogg, Vamsi Talla, and Shyamnath Gollakota. Bringing Gesture Recognition to All Devices. NSDI. 2014.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-joshi.pdf">[JBK+15]</a> Kiran Joshi, Dinesh Bharadia, Manikanta Kotaru, and Sachin Katti. WiDeo: Fine-grained Device-free Motion Tracing using RF Backscatter. NSDI. 2015.</li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-adib.pdf">[AKK15]</a> Fadel Adib, Zachary Kabelac, and Dina Katabi. Multi-Person Localization via RF Body Reflections. NSDI. 2015.</li>   
+
+            <li><a href="http://dl.acm.org/citation.cfm?id=2594389">[GPL14]</a> Jeremy Gummeson, Bodhi Priyantha, and Jie Liu. An energy harvesting wearable ring platform for gesture input on surfaces. MobiSys. 2014.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2594383">[HCH+14]</a> Kiryong Ha et al. Towards wearable cognitive assistance. MobiSys. 2014. </li>
+            <li><a href="http://www.ece.neu.edu/wineslab/papers/Santagati15MOBISYS.pdf">[SM15]</a> G. Enrico Santagati and Tommaso Melodia. U-Wear: Software-Defined Ultrasonic Networking for Wearable Devices. MobiSys. 2015.</li>
+            <li><a href="http://niclane.org/pubs/zoe_mobisys.pdf">[LGM+15]</a> Nicholas D. Lane et al. ZOE: A Cloud-less Dialog-enabled Continuous Sensing Wearable Exploiting Heterogeneous Computation. MobiSys. 2015.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p400-mayberryA.pdf">[MTH+15]</a> Addison Mayberry et al. CIDER: Enabling Robustness-Power Tradeoffs on a Computational Eyeglass. MobiCom. 2015.</li>
+
+            <li><a href="http://works.bepress.com/cgi/viewcontent.cgi?article=1006&context=zhengs">[PSM+11]</a> Aveek Purohit et al. SensorFly: Controlled-mobile Sensing Platform for Indoor Emergency Response Applications. IPSN. 2011. </li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2750685">[BVP15]</a> Bertold Van den Bergh, Tom Vermeulen, and Sofie Pollin. Analysis of Harmful Interference to and from Aerial IEEE 802.11 Systems. DroNet. 2015. </li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2750678">[HKZ+15]</a> Mohammed Ayyoob Ahamed Hamza et al. A Quadcopter Controller to Maintain Radio Link Quality. DroNet. 2015.</li>
+
+            <li><a href="https://www.ssrg.nicta.com.au/publications/papers/Carroll_Heiser_10.pdf">[CH10]</a> Aaron Carroll and Gernot Heiser. An Analysis of Power Consumption in a Smartphone. USENIX ATC. 2010.</li>
+            <li><a href="http://people.cs.umass.edu/~arun/papers/TailEnder.pdf">[BBV09]</a> N. Balasubramanian, A. Balasubramanian, and A. Venkataramani. Energy Consumption in Mobile Phones: A Measurement Study and Implications for Network Applications. IMC. 2009. </li>
+            <li><a href="http://www.cs.columbia.edu/~lierranli/coms6998-7Spring2014/papers/rrclte_mobisys2012.pdf">[HQG12]</a> Junxian Huang, Feng Qian, and Alexandre Gerber. A Close Examination of Performance and Power Characteristics of 4G LTE Networks 4G Energy Model. MobiSys. 2012.</li>
+            <li><a href="http://research.microsoft.com/en-us/people/mzh/eurosys-2012.pdf">[PHZ12]</a> A. Pathak, Y. C. Hu, and M. Zhang. Where is the energy spent inside my app? Fine Grained Energy Accounting on Smartphones with Eprof. EuroSys. 2012. </li>
+            <li><a href="http://web.mit.edu/anirudh/www/imc086-dengA.pdf">[DNS+14]</a> Shuo Deng, Ravi Netravali, Anirudh Sivaraman, and Hari Balakrishnan. WiFi, LTE, or Both? Measuring Multi-Homed Wireless Internet Performance. IMC. 2014.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2639130">[JK14]</a> J. Jadidian and D. Katabi. Magnetic MIMO: How To Charge Your Phone in Your Pocket. MobiCom. 2014.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p2-shiA.pdf">[SKK+15]</a> Lixin Shi, Zachary Kabelac, Dina Katabi, and David Perreault. Wireless Power Hotspot that Charges All of Your Devices. MobiCom. 2015.</li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2632066">[ZYS+15]</a> Chen Zhao et al. Powering Wireless Sensor Nodes with Ambient Temperature Changes. UbiComp. 2014.</li>
+            <li><a href="http://research.microsoft.com/en-us/um/people/moscitho/Publications/SOSP2015.pdf">[BCD+15]</a> Anirudh Badam et al. Software Defined Batteries. SOSP. 2015.</li>
+
+
+            <li><a href="http://www.sysnet.ucsd.edu/sysnet/miscpapers/Agarwal_MobiSys2013_ProtectMyPrivacy.pdf">[AH13]</a> Y. Agarwal and M. Hall. ProtectMyPrivacy: Detecting and Mitigating Privacy Leaks on iOS Devices Using Crowdsourcing. MobiSys. 2013. </li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi14/nsdi14-paper-chakraborty.pdf">[CSR+14]</a> Supriyo Chakraborty et al. ipShield: A Framework For Enforcing Context-Aware Privacy. NSDI. 2014. </li>
+            <li><a href="http://dl.acm.org/citation.cfm?id=2594376">[ZX14]</a> Ruogu Zhou and Guoliang Xing. nShield: A Noninvasive NFC Security System for Mobile Device. MobiSys. 2014. </li>
+            <li><a href="https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-hassanieh.pdf">[HWK15]</a> Haitham Hassanieh, Jue Wang, and Dina Katabi. Securing RFIDs by Randomizing the Modulation and Channel. NSDI. 2015.</li>
+            <li><a href="http://www.sigmobile.org/mobicom/2015/papers/p130-weiA.pdf">[WWZ+15]</a> Teng Wei et al. Acoustic Eavesdropping through Wireless Vibrometry. MobiCom. 2015.</li>
+
+            <li><a href="">[YS14]</a> Vivek Yenamandra and Kannan Srinivasan. Vidyut: Exploiting Power Line Infrastructure For Enterprise Wireless Networks. SIGCOMM. 2014. </li>
+            <li><a href="http://synrg.csl.illinois.edu/papers/overlay.pdf">[JMC15]</a> Puneet Jain, Justin Manweiler, and Romit Roy Choudhury. OverLay: Practical Mobile Augmented Reality. MobiSys. 2015.</li>
+
+          </ul>
+   
+        </div>   
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+</html>
+

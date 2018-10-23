@@ -1,0 +1,324 @@
+http://old-www.cs.dartmouth.edu/~xia/cs60/schedule.html
+3
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 60</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link rel="stylesheet" href="res/css/custom.css">
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="res/font-awesome/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <style>
+      
+    </style> 
+  </head>
+  <body>
+    <div class="pure-g-r" id="layout">
+      <a href="#menu" id="menuLink" class="pure-menu-link">
+        <span></span>
+      </a>
+
+      <div class="pure-u" id="menu">
+        <div class="pure-menu pure-menu-open">
+          <ul>
+            <li class="">
+            <i class="fa fa-home"></i><a href="index.html">Home</a>
+            </li>
+            <li class="pure-menu-selected">
+            <i class="fa fa-calendar"></i><a href="schedule.html">Schedule</a>
+            </li>
+            <li class="">
+            <i class="fa fa-folder-open"></i><a href="assignments.html">Assignments</a>
+            </li>
+            <li class="">
+            <i class="fa fa-flask"></i><a href="project.html">Project</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="pure-u-1" id="main">
+        <div class="hero">
+          <p>
+            <img src="res/img/network.jpg" height=120px size=100%></img>
+          </p> 
+        </div>
+
+        <a name="#schedule"></a>
+        <div class="header">
+          <h1><i class="fa fa-calendar"></i> Schedule</h1>
+        </div>
+        <div class="content">
+          <p>Lecture topics are still subject to changes. The last two weeks are held for class project - there will be no lectures but group code design and review.
+          </p>
+
+          <table id="schedule" class="pure-table">
+            <!--
+            <thead>
+              <tr style="background-color:#ccc">
+                <th>Date</th>
+                <th>Topic</th>
+                <th>Papers</th>
+                <th>Presenters</th>
+                <th>Note</th>
+              </tr>
+            </thead> -->
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 1: The Basics</font></td>
+            </tr>
+
+            <tr>
+              <td>Mar. 28</td>
+              <td>Kickoff</td>
+              <td>
+              </td>
+              <td><a href="https://piazza.com/dartmouth/spring2016/cosc06001sp16"><i>Sign up on Piazza</i></a><br/>
+              <a href="http://goo.gl/forms/vTwng7AU2P">Fill in a Google form</a></td>
+            </tr>
+
+            <tr>
+              <td>Mar. 30</td>
+              <td>Computer networks in a nutshell: layers</td>
+              <td><a href="http://ccr.sigcomm.org/archive/1995/jan95/ccr-9501-clark.pdf">Clark88</a>,<br/>
+              Ch.1.1 - 1.5
+              </td>
+              <td>Assignment 1 out</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 1</td>
+              <td>Socket programming</td>
+              <td> <br/>
+              Ch.2.7
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 2: Network Applications</font></td>
+            </tr>
+
+            <tr>
+              <td>Apr. 4</td>
+              <td>Overview of applications</td>
+              <td> <br/>
+              Ch.2.1 - 2.5
+              </td>
+              <td>Assignment 2 out</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 6</td>
+              <td>Case study: Peer-to-peer application BitTorrent</td>
+              <td><a href="http://www.bittorrent.org/bittorrentecon.pdf">Cohen03</a>,<br/>
+              Ch.2.6
+              </td>
+              <td>Assignment 1 due</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 8</td>
+              <td>Case study: Cloud-based service Dropbox</td>
+              <td><a href="http://eprints.eemcs.utwente.nl/22286/01/imc140-drago.pdf">DMM+12</a>,<br/>
+              
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 3: The Transport Layer</font></td>
+            </tr>
+
+            <tr>
+              <td>Apr. 11</td>
+              <td>Transport protocols: UDP and TCP</td>
+              <td> <br/>
+              Ch.3.1 - 3.3
+              </td>
+              <td>Assignment 3 out</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 13</td>
+              <td>TCP reliability</td>
+              <td> <br/>
+              Ch.3.4 - 3.5
+              </td>
+              <td>Assignment 2 due</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 15</td>
+              <td>TCP congestion control</td>
+              <td> <br/>
+              Ch.3.6 - 3.7
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 4: The Network Layer (IP Layer)</font></td>
+            </tr>
+
+            <tr>
+              <td>Apr. 18</td>
+              <td>Wrapping up TCP (Wireless TCP)</td>
+              <td> <br/>
+
+              </td>
+              <td>Assignment 4 out</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 20</td>
+              <td>IP layer introduction</td>
+              <td> <br/>
+              Ch.4.1, 4.2
+              </td>
+              <td>Assignment 3 due</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 22</td>
+              <td>IP routing (Intra-domain)</td>
+              <td> <br/>
+              Ch.4.6
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 5: The Network Layer (IP Layer)</font></td>
+            </tr>
+
+            <tr>
+              <td>Apr. 25</td>
+              <td>IP routing (Inter-domain)</td>
+              <td> <br/>
+              Ch.4.6.3
+              </td>
+              <td>Assignment 5 out</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 27</td>
+              <td>IP data plane</td>
+              <td> <br/>
+              Ch.4.3 - 4.4
+              </td>
+              <td>Assignment 4 due</td>
+            </tr>
+
+            <tr>
+              <td>Apr. 29</td>
+              <td>Summary of TCP/IP</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 6: All Things Wireless</font></td>
+            </tr>
+
+            <tr>
+              <td>May 2</td>
+              <td>Data link layer (wired)</td>
+              <td> <br/>
+              Ch.5.1, 5.4
+              </td>
+              <td>Assignment 6 out</td>
+            </tr>
+
+            <tr>
+              <td>May 4</td>
+              <td>Wireless physical layer</td>
+              <td> <br/>
+              Ch.6.2 - 6.4
+              </td>
+              <td>Assignment 5 due</td>
+            </tr>
+
+            <tr>
+              <td>May 6</font></td>
+              <td>Wireless MAC protocols</td>
+              <td> <br/>
+              Ch.6.3.2
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 7: Advanced Topics</font></td>
+            </tr>
+
+            <tr>
+              <td>May 9</td>
+              <td>Cloud computing and data centers</td>
+              <td> <br/>
+              Ch.5.6
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>May 11</td>
+              <td>Software defined networking</td>
+              <td><a href="https://www.youtube.com/watch?v=YHeyuD89n1Y"> The classic talk</a></td>
+              <td>Assignment 6 due</td>
+            </tr>
+
+            <tr>
+              <td>May 13</td>
+              <td>Class project: DartSync</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 8 - 9: Project Weeks</font></td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td>Code design, code review</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td align="left" colspan="5" style="background-color:#1f8dd6"><font color="white">Week 10: Demo-or-Die Week</font></td>
+            </tr>
+
+            <tr>
+              <td>June 1</td>
+              <td>Project demo </td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>June 2</td>
+              <td>Project report due</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+
+          </table>
+        </div>   
+
+      </div>
+
+    </div>
+    <script src="res/js/menu.js"></script>
+  </body>
+</html>
+

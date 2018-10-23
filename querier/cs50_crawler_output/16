@@ -1,0 +1,376 @@
+http://old-www.cs.dartmouth.edu/~xia/index.html
+3
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://www.w3.org/2006/03/hcard">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <link href="xz.css" rel="stylesheet" type="text/css" />
+
+    <title>Xia Zhou, Dartmouth</title>
+</head>
+
+<body>
+    <div class="container700 vcard">
+        <div class="titletext fn">
+            Xia Zhou
+        </div>
+
+        <div id="section-links">
+            <div class="sectionContainer">
+                <div class="section selected">
+                    Home »
+                </div>
+
+                <div class="section">
+                    <a href="publications.html">Publications</a>
+                </div>
+
+                <div class="section">
+                    <a href="http://dartnets.cs.dartmouth.edu/">DartNets Lab</a>
+                </div><br />
+
+                <div class="section">Teaching:
+                    <ul>
+                        <li><a href="http://www.cs.dartmouth.edu/~cs50/">CS50 (Summer'17)</a></li>
+                        <li><a href="cs200/index.html">CS200 (Fall'17)</a></li>
+                        <li><a href="http://www.cs.dartmouth.edu/~cs50/">CS50 (Summer'16)</a></li>
+                        <li><a href="cs60/index.html">CS60 (Spring'16)</a></li>
+                        <li><a href="cs69/index.html">CS69/169 (Fall'15)</a></li>
+                        <li><a href="cs50/index.html">CS50 (Summer'15)</a></li>
+                        <li>CS60 (Spring'15)</li>
+                        <li>CS50 (Winter'15)</li>
+                        <li>CS69/169 (Fall'14)</li>
+                        <li>CS60 (Spring'14)</li>
+                        <li>CS69/169 (Fall'13)</li>
+                    </ul>
+                </div><br />
+
+                <div class="section">PhD Students:
+                    <ul>
+                        <li><a href="http://www.cs.dartmouth.edu/~ltx/">Tianxing Li</a></li>
+                        <li><a href="http://www.cs.dartmouth.edu/~tianzhao/">Zhao Tian</a></li>
+                        <li><a href="http://www.cs.dartmouth.edu/~xi/ ">Xi Xiong</a></li>
+                    </ul>
+                </div><br/>
+
+                <div class="section">
+                    <a href="xz-cv.pdf">CV</a>
+                </div>
+
+                <div class="section">
+                    <a href="http://scholar.google.com/citations?user=t_DFZvgAAAAJ&amp;hl=en">
+                    Google Scholar</a>
+                </div><br/>
+
+                <div class="section">
+                    <div>Timeline:</div>
+                    <table class="talk">
+                        <tbody> 
+                            <td class="old">12/15 - 2/19</td>
+                            <td class="old">Visit: National Taiwan University</td>
+                            <tr/>
+                            <td class="old">3/9-3/16</td>
+                            <td class="old">CFP: <a href="https://www.sigmobile.org/mobicom/2017/">MobiCom'17</a></td>
+                            <tr/>  
+                            <td class="old">4/3-4/10</td>
+                            <td class="old">CFP: <a href="http://sensys.acm.org/2017/">SenSys'17</a>, <a href="http://uist.acm.org/uist2017/">UIST'17</a></td>
+                            <tr/>
+                            <td class="old">4/16-6/17</td>
+                            <td class="old">Visit: University of Cambridge</td>
+                            <tr/>
+                            <td>7/31-8/1</td>
+                            <td>Travel: <a href="https://sites.google.com/view/netsearlycareer2017/">NSF NeTS Early Career workshop</a></td>
+                        </tbody>
+                    </table>
+                </div><br/>
+
+                <div class="section">Contact:<br/>
+                    6211 Sudikoff Lab, office 208<br/>
+                    Dartmouth College<br/>
+                    Hanover, NH 03755<br/>
+                    <br/>
+                    xia.zhou AT dartmouth.edu<br/>
+                    <br/>
+                    <a href="#" onclick="showConvospot()">Talk to my chatbot</a> (designed by <a href="http://www.convospot.io/">convospot</a>)
+                </div><br/>
+
+                <div class="section">
+                    <a href="http://www.dartmouth.edu/~reg/calendar/academic/">Dartmouth Calendar</a>
+                </div>
+            </div>
+        </div><img class="picture-border photo" src="xz.jpg" width="200px" />
+
+        <div class="content">
+            <p style="margin-top: 0px;">I am an Assistant Professor in the <a href= "http://www.cs.dartmouth.edu/">Department of Computer Science</a> at Dartmouth College. I co-direct the <a href="http://dartnets.cs.dartmouth.edu/">DartNets</a> (Dartmouth Networking and Ubiquitous Systems) Lab with <a href= "http://www.cs.dartmouth.edu/~campbell/">Prof. Andrew T. Campbell</a>. I received my PhD in Computer Science at <a href= "https://www.cs.ucsb.edu/">UC Santa Barbara</a> in June, 2013, working under the supervision of <a href="http://www.cs.ucsb.edu/~htzheng">Prof. Heather Zheng</a>. I was a visiting faculty in <a href="http://www.eecs.ntu.edu.tw/main.php">National Taiwan University</a> from December 2016 to February 2017, and in <a href="http://www.cl.cam.ac.uk/">University of Cambridge</a> from April 2017 to June 2017.</p>
+
+            <p>My research interest lies broadly in mobile systems and wireless networking. Our current projects include visible light communication systems and applications, mobile sensing, and efficient monitoring and enforcement of the radio spectrum usage. </p>
+
+            <p>My PhD work designed network systems to handle the massive volume and unpredictable nature of today's data traffic (see more in our <a href="http://www.cs.dartmouth.edu/~xia/papers/mobicom08_veritas.pdf">MobiCom'08</a> and  <a href="http://www.cs.dartmouth.edu/~xia/papers/sigcomm12_beam3d.pdf">SIGCOMM'12</a> papers). </p>
+
+            <p>I am fortunate to work with a group of talented and motivated students at the DartNets lab. I am also looking for motivated students to join us! If you are interested in mobile systems research, please email me with your CV. Before you apply, please take a look at <a href="http://web.cs.dartmouth.edu/graduate/programs">this website</a> to know more about Dartmouth PhD program.</p>
+
+            <div>
+                Recent publications:
+            </div>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Ultra-Low Power Gaze Tracking for Virtual Reality.</span><br/>  
+                        <span class="author">T. Li, Q. Liu, and X. Zhou</span><br/>
+                        <i>To appear in</i> <span class="venue">SenSys 2017.</span> [PDF] </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Pyro: Thumb-Tip Gesture Recognition Using Pyroelectric Infrared Sensing.</span><br/> 
+                        <span class="author">J. Gong, Y. Zhang, X. Zhou, and X. Yang</span><br/>
+                        <i>To appear in</i> <span class="venue">UIST 2017.</span> [PDF] </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Position: Augmenting Inertial Tracking with Light.</span><br/>  
+                        <span class="author">Z. Tian, Y. Wei, X. Xiong, W. Chang, H. Tsai, K. Lin, C. Zheng, X. Zhou</span><br/>
+                        <i>To appear in</i> <span class="venue">VLCS 2017.</span> [PDF] </td>
+                    </tr> 
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Reconstructing Hand Poses Using Visible Light.</span><br/>  
+                        <span class="author">T. Li, X. Xiong, Y. Xie, G. Hito, X. Yang, and X. Zhou</span><br/>
+                        <i>To appear in</i> <span class="venue">UbiComp 2017.</span> [PDF] <a href="https://youtu.be/Fl1vVc3UGLA">[Video]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Empirical Validation of Commodity Spectrum Monitoring</span><br/>  
+                        <span class="author">A. Nika, Z. Li, Y. Zhu, Y. Zhu, B. Zhao, X. Zhou, and H. Zheng</span><br/>
+                        <span class="venue">SenSys 2016.</span> [PDF] </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">The DarkLight Rises: Visible Light Communication in the Dark</span><br/>  
+                        <span class="author">Z. Tian, K. Wright, and X. Zhou</span><br/>
+                        <span class="venue">MobiCom 2016.</span> <a href="papers/mobicom16-darklight.pdf">[PDF]</a> <a href="https://youtu.be/qwxLYC2z1C0">[Video]</a> <a href="http://dartnets.cs.dartmouth.edu/darklight">[Project Website]</a><br/>
+                        <b class="award"><span><span>Best Video Award</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Automating 3D Wireless Measurements with Drones</span><br/>  
+                        <span class="author">E. Yu, X. Xiong, and X. Zhou</span><br/>
+                        <span class="venue">WiNTECH 2016.</span> [PDF]  </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Practical Human Sensing in the Light</span><br/>  
+                        <span class="author">T. Li, Q. Liu, and X. Zhou</span><br/>
+                        <span class="venue">MobiSys 2016.</span> <a href="papers/mobisys16-starlight.pdf">[PDF]</a> <a href="https://youtu.be/DIDxR4zdrds">[Video]</a> <a href="http://dartnets.cs.dartmouth.edu/starlight">[Project Website]</a><br/> 
+                        <b class="award"><span><span>SIGMobile Research Highlights</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Lighting Up the Internet of Things with DarkVLC</span><br/>  
+                        <span class="author">Z. Tian, K. Wright, and X. Zhou</span><br/>
+                        <span class="venue">HotMobile, 2016.</span> <a href="papers/hotmobile16-darkvlc.pdf">[PDF]</a></td>
+                    </tr>
+                </tbody>
+            </table>  
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Human Sensing Using Visible Light Communication</span><br/>  
+                        <span class="author">T. Li, C. An, Z. Tian, A. Campbell, and X. Zhou</span><br/>
+                        <span class="venue">MobiCom 2015.</span> <a href="http://www.cs.dartmouth.edu/~xia/papers/mobicom15-lisense.pdf">[PDF]</a> <a href="https://youtu.be/7wK-zo66GdY">[Video]</a> <a href="http://dartnets.cs.dartmouth.edu/lisense">[Project Website]</a><br />
+                        <b class="award"><span><span>Best Video Award</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">3D Printing Your Wireless Coverage</span><br/>  
+                        <span class="author">J. Chan, C. Zheng, and X. Zhou</span><br/>
+                        <span class="venue">The 2nd ACM Workshop on Hot Topics in Wireless (HotWireless), 2015.</span> <a href="papers/hotw15-wiprint.pdf">[PDF]</a> <a href="https://www.youtube.com/watch?v=1KVBFtSuCm0">[Video]</a><br />
+                        <b class="award"><span><span>Hot Paper Award</span></span></td>
+                    </tr>
+                </tbody>
+            </table> 
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Visible Light Knows Who You Are</span><br/>  
+                        <span class="author">C. An, T. Li, Z. Tian, A. Campbell, and X. Zhou</span><br/>
+                        <span class="venue">The 2nd ACM Workshop on Visible Light Communication Systems (VLCS), 2015.</span> [PDF]</td>
+                    </tr>
+                </tbody>
+            </table>            
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Low-Power Pervasive Wi-Fi Connectivity Using WiScan</span><br/>  
+                        <span class="author">T. Li, C. An, R. Chandra, A. Campbell, and X. Zhou</span><br/>
+                        <span class="venue">UbiComp 2015.</span> <a href="papers/ubicomp15-wiscan.pdf"> [PDF]</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">SmartGPA: How Smartphones Can Assess and Predict Academic Performance of College Students</span><br/>  
+                        <span class="author">R. Wang, P. Hao, G. Harari, X. Zhou, and A. Campbell</span><br/>
+                        <span class="venue">UbiComp 2015.</span> <a href="http://studentlife.cs.dartmouth.edu/smartgpa.pdf">[PDF]</a> <a href="https://www.youtube.com/watch?v=XqJTXo1uKJ0">[Video]</a><br />
+                        <b class="award"><span><span>Honorable Mention Award</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">The Mobile Photographic Stress Meter (MPSM): A New Way to Measure Stress Using Images</span><br/>  
+                        <span class="author">S. Haim, R. Wang, L. Loeb, X. Zhou, and A. Campbell</span><br/>
+                        <span class="venue">The 4th International Workshop on Mobile Systems for Computational Social Science (MCSS) 2015.</span> <a href="http://studentlife.cs.dartmouth.edu/mpsm.pdf">[PDF]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Using Opportunistic Face Logging from Smartphone to Infer Mental Health: Challenges and Future Directions</span><br/>  
+                        <span class="author">R. Wang, X. Zhou, and A. Campbell</span><br/>
+                        <span class="venue">The 4th International Workshop on Mobile Systems for Computational Social Science (MCSS) 2015.</span> [PDF]</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Real-Time Screen-Camera Communication Behind Any Scene</span><br/>  
+                        <span class="author">T. Li, C. An, X. Xiao, A. Campbell, and X. Zhou</span><br/>
+                        <span class="venue">MobiSys 2015.</span> <a href="papers/mobisys15-hilight.pdf">[PDF]</a> <a href="https://www.youtube.com/watch?v=VbG4VNA7RZs">[Demo Video]</a> <a href="http://dartnets.cs.dartmouth.edu/hilight">[Project Website]</a><br/>
+                        <b class="award"><span><span>Best Demo Award</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Energy and Performance of Smartphone Radio Bundling in Outdoor Environments</span><br/>  
+                        <span class="author">A. Nika, Y. Zhu, N. Ding, A. Jindal, Y. Charlie Hu, X. Zhou, B. Zhao and H. Zheng</span><br/>
+                        <span class="venue">WWW 2015.</span>  <a href="papers/www15-wifilte.pdf">[PDF]</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">StudentLife: Assessing Mental Health, Academic Performance and Behavioral Trends of College Students using Smartphones</span><br/>  
+                        <span class="author">R. Wang, F. Chen, Z. Chen, T. Li, G. Harari, S. Tigno, X. Zhou, D. Ben-Zeev, and A. Campbell</span><br/>
+                        <span class="venue">UbiComp 2014.</span>  <a href="http://studentlife.cs.dartmouth.edu/studentlife.pdf">[PDF]</a><br/>
+                        <b class="award"><span><span>Best Paper Nominee</span></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Visible Light Networking and Sensing</span><br/>  
+                        <span class="author">X. Zhou and A. Campbell</span><br/>
+                        <span class="venue">The 1st ACM Workshop on Hot Topics in Wireless (HotWireless), 2014.</span> <a href=
+                        "papers/hotw14-ivlc.pdf">[PDF]</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Towards Commoditized Real-time Spectrum Monitoring</span><br/>  
+                        <span class="author">A. Nika, Z. Zhang, X. Zhou, B. Zhao, and H. Zheng</span><br/>
+                        <span class="venue">The 1st ACM Workshop on Hot Topics in Wireless (HotWireless), 2014.</span> <a href=
+                        "papers/hotw14-specmonitor.pdf">[PDF]</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">HiLight: Hiding Bits in Pixel Translucency Changes</span><br/>  
+                        <span class="author">T. Li, C. An, A. Campbell, and X. Zhou</span><br/>
+                        <span class="venue">The 1st ACM Workshop on Visible Light Communication Systems (VLCS), 2014.</span> <a href=
+                        "papers/vlcs14-hilight.pdf">[PDF]</a><br/>
+                        <b class="award"><span><span>Best Paper Award</span></span> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">Cutting the Cord: a Robust Wireless Facilities Network for Data Centers</span><br/>  
+                        <span class="author">Y. Zhu, X. Zhou, Z. Zhang, L. Zhou, A. Vahdat, B. Zhao and H. Zheng</span><br/>
+                        <span class="venue">MobiCom 2014.</span> <a href=
+                        "papers/mobicom14-angora.pdf">[PDF]</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="frontpage-paper-container">
+                <tbody>
+                    <tr>
+                        <td><span class="paper-title">My Smartphone Knows I am Hungry</span><br/>  
+                        <span class="author">F. Chen, R. Wang, X. Zhou, and A. Campbell</span><br/>
+                        <span class="venue">The 1st ACM Workshop on Physical Analytics, 2014.</span> <a href=
+                        "papers/wpa14.pdf">[PDF]</a> </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <div class="bottom"></div>
+    </div>
+
+    <script src="http://widget.convospot.io/convospot.js" aid="100006" token="WJ3mO" async></script>
+</body>
+</html>

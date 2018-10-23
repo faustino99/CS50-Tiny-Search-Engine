@@ -1,0 +1,725 @@
+./crawlertest.sh
+### Creating empty directory 'data' for crawler to store webpages; if 'data' already exists, then everything in it is deleted ###
+
+### Test program with an invalid number of arguments ###
+
+# './crawler' output:
+usage: ./crawler seedURL pageDirectory maxDepth
+# './crawler seedURL pageDirectory maxDepth fourthArgument' output:
+usage: ./crawler seedURL pageDirectory maxDepth
+# './crawler arg1 arg2' output:
+usage: ./crawler seedURL pageDirectory maxDepth
+# './crawler arg1' output:
+usage: ./crawler seedURL pageDirectory maxDepth
+
+### Test crawler with invalid/un-useable arguments ###
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data -1' output:
+maxDepth '-1' must be in range [1:10]
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 11' output:
+maxDepth '11' must be in range [1:10]
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ randomDir 2' output:
+invalid or unwritable directory 'randomDir'
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ /bin 2' output:
+invalid or unwritable directory '/bin'
+# './crawler http://google.com data 2' output:
+non-internal seedURL 'http://google.com'
+# './crawler http://old-www.cs.dartmouth.edu/asdfeivj data 2' output:
+ 0    FAILED: http://old-www.cs.dartmouth.edu/asdfeivj
+
+### Test crawler on a simple set of pages that loop to see how crawler deals with duplicates and ensure crawler's output matches expectations
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 0' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+
+# ls output for data directory should only output a single file with id '1'
+1
+
+# this file should contain the html for 'http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/':
+http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+0
+<html>
+<title>home</title>
+This is the home page for a CS50 TSE playground.
+<a href=A.html>A</a>
+</html>
+
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 1' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+
+# ls output for data directory should now be two files w/ names 1 & 2:
+crawler
+crawler.c
+crawler.o
+crawlertest.out
+crawlertest.sh
+data
+IMPLEMENTATION.md
+Makefile
+README.md
+TESTING.md
+
+# file 2 should contain the html for http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html':
+http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+1
+<html>
+<title>A</title>
+A is for <a href=https://en.wikipedia.org/wiki/Algorithm>Algorithm</a>.
+<a href=B.html>B</a>
+<a href=index.html>home</a>
+</html>
+
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 2' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Found: https://en.wikipedia.org/wiki/Algorithm
+ 1   IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 3' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Found: https://en.wikipedia.org/wiki/Algorithm
+ 1   IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Found: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2    IgnExtrn: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 4' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Found: https://en.wikipedia.org/wiki/Algorithm
+ 1   IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Found: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2    IgnExtrn: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3        Found: https://en.wikipedia.org/wiki/ENIAC
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/ENIAC
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3        Found: https://en.wikipedia.org/wiki/Depth-first_search
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/Depth-first_search
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3        Found: https://en.wikipedia.org/wiki/Computational_biology
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/Computational_biology
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/ data 5' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Found: https://en.wikipedia.org/wiki/Algorithm
+ 1   IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Found: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2    IgnExtrn: https://en.wikipedia.org/wiki/Breadth-first_search
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3        Found: https://en.wikipedia.org/wiki/ENIAC
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/ENIAC
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 4      Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+ 4         Found: https://en.wikipedia.org/wiki/Graph_traversal
+ 4      IgnExtrn: https://en.wikipedia.org/wiki/Graph_traversal
+ 4         Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+ 4         Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+ 4         Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 4      IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 5        Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 4      Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+ 4         Found: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+ 4      IgnExtrn: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+ 4         Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+ 4      IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+ 4         Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 4      IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3        Found: https://en.wikipedia.org/wiki/Depth-first_search
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/Depth-first_search
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3        Found: https://en.wikipedia.org/wiki/Computational_biology
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/Computational_biology
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+
+there should now be 10 files in 'data' with names ranging from 1-10:
+1
+10
+2
+3
+4
+5
+6
+7
+8
+9
+
+### Clear data directory & test crawler on the same set of pages but starting at a different seed URL
+
+'./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html data 3' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 0     Found: https://en.wikipedia.org/wiki/Depth-first_search
+ 0  IgnExtrn: https://en.wikipedia.org/wiki/Depth-first_search
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2       Found: https://en.wikipedia.org/wiki/Algorithm
+ 2    IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+
+'./crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html data 4' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 0     Found: https://en.wikipedia.org/wiki/Depth-first_search
+ 0  IgnExtrn: https://en.wikipedia.org/wiki/Depth-first_search
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2     Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2    Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+ 2       Found: https://en.wikipedia.org/wiki/Algorithm
+ 2    IgnExtrn: https://en.wikipedia.org/wiki/Algorithm
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 2       Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 2    IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3      Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 3     Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+ 3        Found: https://en.wikipedia.org/wiki/Breadth-first_search
+ 3     IgnExtrn: https://en.wikipedia.org/wiki/Breadth-first_search
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3        Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 3        Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 3     IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+ 4       Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+
+### Test crawler on the wikipedia playground on the Dartmouth CS page
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/ data 0' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/ data 1' output:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+
+# './crawler http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/ data 2' output. Warning this output will be very long:
+ 0   Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+ 0  Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/C_(programming_language).html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unix.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dartmouth_College.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 0     Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 0     Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 1    Fetched: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 1   Scanning: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linked_list.html
+ 1      Found: http://en.wikipedia.org/wiki/File:Question_book-new.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:Question_book-new.svg
+ 1      Found: http://en.wikipedia.org/wiki/Wikipedia:Verifiability
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Wikipedia:Verifiability
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit
+ 1      Found: http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Help:Introduction_to_referencing/1
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Computer_science.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_structure.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_structure.html
+ 1      Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1      Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1      Found: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Abstract_data_type.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Abstract_data_type.html
+ 1      Found: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/List_(abstract_data_type)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Stack_(abstract_data_type).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Stack_(abstract_data_type).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Queue_(abstract_data_type).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Queue_(abstract_data_type).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Associative_array.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Associative_array.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/S-expression.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/S-expression.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Random_access.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Random_access.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=1
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Allen_Newell.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Allen_Newell.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cliff_Shaw.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cliff_Shaw.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Herbert_A.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Herbert_A.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/RAND_Corporation.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/RAND_Corporation.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_structure.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_structure.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Information_Processing_Language.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Information_Processing_Language.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Artificial_intelligence.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Artificial_intelligence.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/General_Problem_Solver.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/General_Problem_Solver.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/UNESCO.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/UNESCO.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Turing_Award.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Turing_Award.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Machine_translation.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Machine_translation.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Natural_language.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Natural_language.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Victor_Yngve.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Victor_Yngve.html
+ 1      Found: http://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linguistics.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linguistics.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/LISP.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/LISP.html
+ 1      Found: http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/John_McCarthy_(computer_scientist)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Communications_of_the_ACM.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Communications_of_the_ACM.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/MIT_Lincoln_Laboratory.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/MIT_Lincoln_Laboratory.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Technical_Systems_Consultants.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Technical_Systems_Consultants.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Motorola_6800.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Motorola_6800.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=2
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=2
+ 1      Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_(programming_language).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_(programming_language).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=3
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=3
+ 1      Found: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:Singly-linked-list.svg
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=4
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=4
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Doubly_linked_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Doubly_linked_list.html
+ 1      Found: http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:Doubly-linked-list.svg
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/XOR_linked_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/XOR_linked_list.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=5
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=5
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=6
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=6
+ 1      Found: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Node_(computer_science)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Null_pointer.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Null_pointer.html
+ 1      Found: http://en.wikipedia.org/wiki/File:Circularly-linked-list.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:Circularly-linked-list.svg
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=7
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=7
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sentinel_node.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sentinel_node.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=8
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=8
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=9
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=9
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=10
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=10
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=11
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=11
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=12
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=12
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=13
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=13
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_array.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_array.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-balancing_binary_search_tree.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-balancing_binary_search_tree.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_array.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_array.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Fragmentation_(computer).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Fragmentation_(computer).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_structure.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Random_access.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Random_access.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sequential_access.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sequential_access.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Heapsort.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Heapsort.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Character_(computing).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Character_(computing).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Boolean_value.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Boolean_value.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Memory_pool.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Memory_pool.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unrolled_linked_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unrolled_linked_list.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CDR_coding.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CDR_coding.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Josephus_problem.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Josephus_problem.html
+ 1      Found: http://en.wikipedia.org/wiki/List_ranking
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/List_ranking
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Parallel_algorithm.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Parallel_algorithm.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-balancing_binary_search_tree.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-balancing_binary_search_tree.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/AVL_tree.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/AVL_tree.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Red-black_tree.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Red-black_tree.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=14
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=14
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Recursion.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Recursion.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Merge_algorithm.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Merge_algorithm.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Iteration.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Iteration.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Tail-sharing.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Tail-sharing.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_programming_language.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_programming_language.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/CAR_and_CDR.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=15
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=15
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/XOR_linked_list.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/XOR_linked_list.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=16
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=16
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Polygon.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Polygon.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_buffer.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Data_buffer.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/FIFO_(computing).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/FIFO_(computing).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Time_sharing.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Time_sharing.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Round-robin_scheduling.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Round-robin_scheduling.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Quad-edge_data_structure.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Quad-edge_data_structure.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Face-edge_data_structure&amp;action=edit&amp;redlink=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Face-edge_data_structure&amp;action=edit&amp;redlink=1
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=17
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=17
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=18
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=18
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pseudocode.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Pseudocode.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sentinel_value.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Sentinel_value.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=19
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=19
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=20
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=20
+ 1      Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1      Found: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-addingnode.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-addingnode.svg
+ 1      Found: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-deletingnode.svg
+ 1   UnNrmlzd: http://en.wikipedia.org/wiki/File:CPT-LinkedLists-deletingnode.svg
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Asymptotic_time_complexity.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Asymptotic_time_complexity.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Append.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Append.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=21
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=21
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=22
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=22
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=23
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=23
+ 1      Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_type.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Array_data_type.html
+ 1      Found: http://en.wikipedia.org/wiki/Record_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Record_(computer_science)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Parallel_array.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Parallel_array.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Free_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Free_list.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Serialization.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Serialization.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_memory_allocation.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Dynamic_memory_allocation.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Big-O_notation.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Big-O_notation.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Amortized_analysis.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=24
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=24
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Programming_language.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Programming_language.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_programming_language.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Lisp_programming_language.html
+ 1      Found: http://en.wikipedia.org/wiki/Scheme_(programming_language)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Scheme_(programming_language)
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Functional_programming_language.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Functional_programming_language.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cons.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Cons.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Car_and_cdr-2.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Car_and_cdr-2.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Car_and_cdr-2.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Car_and_cdr-2.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Abstract_data_type.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Abstract_data_type.html
+ 1      Found: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Reference_(computer_science)
+ 1      Found: http://en.wikipedia.org/wiki/Record_(computer_science)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Record_(computer_science)
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=25
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=25
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Locality_of_reference.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=26
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=26
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=27
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=27
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linear_search.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Linear_search.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Index_(database).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Index_(database).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Red-black_tree.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Red-black_tree.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=28
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=28
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Random_access_list&amp;action=edit&amp;redlink=1
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Skew_binary_random_access_list&amp;action=edit&amp;redlink=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Skew_binary_random_access_list&amp;action=edit&amp;redlink=1
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Skew_binary_number_system.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Skew_binary_number_system.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Persistent_data_structure.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Min-list&amp;action=edit&amp;redlink=1
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Min-list&amp;action=edit&amp;redlink=1
+ 1      Found: http://en.wikipedia.org/wiki/Wikipedia:Please_clarify
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Wikipedia:Please_clarify
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=29
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=29
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Stack_(data_structure).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Stack_(data_structure).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Queue_(data_structure).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Queue_(data_structure).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Skip_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Skip_list.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Binary_tree.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Binary_tree.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unrolled_linked_list.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Unrolled_linked_list.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 1   IgnDplct: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Hash_table.html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Heap_(data_structure).html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Heap_(data_structure).html
+ 1      Found: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-organizing_list.html
+ 1      Added: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/wiki/Self-organizing_list.html
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=30
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=30
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=31
+ 1   UnNrmlzd: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=31
+ 1      Found: http://www.juniata.edu/faculty/kruse/cs240/syllabus.htm
+ 1   IgnExtrn: http://www.juniata.edu/faculty/kruse/cs240/syllabus.htm
+ 1      Found: http://www.juniata.edu/faculty/kruse/cs240/linkedlist2.htm
+ 1   IgnExtrn: http://www.juniata.edu/faculty/kruse/cs240/linkedlist2.htm
+ 1      Found: http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style
+ 1   IgnExtrn: http://channel9.msdn.com/Events/GoingNative/GoingNative-2012/Keynote-Bjarne-Stroustrup-Cpp11-Style
+ 1      Found: http://kjellkod.wordpress.com/2012/02/25/why-you-should-never-ever-ever-use-linked-list-in-your-code-again/
+ 1   IgnExtrn: http://kjellkod.wordpress.com/2012/02/25/why-you-should-never-ever-ever-use-linked-list-in-your-code-again/
+ 1      Found: http://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist)
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Robert_Sedgewick_(computer_scientist)
+ 1      Found: http://www.cs.uwaterloo.ca/research/tr/1999/09/CS-99-09.pdf
+ 1   UnNrmlzd: http://www.cs.uwaterloo.ca/research/tr/1999/09/CS-99-09.pdf
+ 1      Found: http://en.wikipedia.org/wiki/Special:BookSources/0130858501
+ 1   IgnExtrn: http://en.wikipedia.org/wiki/Special:BookSources/0130858501
+ 1      Found: http://cs.oberlin.edu/~jwalker/refs/fpca95.ps
+ 1   UnNrmlzd: http://cs.oberlin.edu/~jwalker/refs/fpca95.ps
+ 1      Found: http://en.wikipedia.org/w/index.php?title=Linked_list&amp;action=edit&amp;section=32
+(truncated the output for this command, otherwise it would go on for another few thousand lines)
+
+# Number of files in 'data' folder (should be 1705):
+1705

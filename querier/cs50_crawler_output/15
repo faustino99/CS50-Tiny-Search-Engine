@@ -1,0 +1,850 @@
+http://old-www.cs.dartmouth.edu/~xia/publications.html
+2
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Publications</title>
+	<link rel="stylesheet" href="xz.css" type="text/css">
+	
+	<style>
+		a.exhibit-item, a.exhibit-item:link, a.exhibit-item:active, a.exhibit-item:visited {
+			border-bottom:1px dotted;
+		}
+		a.exhibit-item:link {
+		        font-family: 'MyriadProLight';
+		}
+		div.publication-lens {
+			margin-bottom:  1em;
+			margin-top: 1.5em;
+		}
+		.publication-lens div.authors {
+			/*font-style: italic;*/
+		}
+		/*
+		.publication-lens .publication-title {
+			font-weight: bold;
+		}
+		*/
+		.publication-lens div.downloads {
+			/*margin-top: 0.2em;*/
+		}
+		.publication-lens div.abstract {
+			color:  #666;
+		}
+		.publication-lens div.excerpt {
+			color:  #666;
+		}
+		.publication-lens td {
+		    vertical-align: top;
+		}
+		.copy-button {
+			float: right;
+		}
+		.exhibit-tileView-body {
+			padding-left: 20px;
+		}
+		
+		/* the filter boxes at the top */
+		div.exhibit-facet-value {
+			padding:0px;
+		}
+		div.exhibit-facet-header {
+			padding: 0px;
+		}
+		
+		/* get rid of the numbering*/
+		ol.exhibit-tileView-body {
+		    padding: 0px;
+		    margin:  0px;
+		}
+		.exhibit-tileView-body li {
+		    list-style: none;
+		}
+		
+		.exhibit-collectionView-header {
+			display: none;
+		}
+		.exhibit-collectionView-header-sortControls {
+			display: block;
+		}
+
+                .exhibit-collectionView-footer {
+                    display: none;
+                }
+	</style>
+</head>
+
+<body ex:exporters="Bibtex">
+<div class="container700">
+	<div class="titletext">Publications</div>
+	<div id="section-links">
+		<div class="sectionContainer">
+			<div class="section"><a href="index.html">Home</a></div>
+			<div class="section selected">Publications »</div>
+			<div class="section"><a href="http://dartnets.cs.dartmouth.edu/">DartNets Lab</a></div>
+			<br>
+			<div class="section"><a href="xz-cv.pdf">CV</a></div>
+			<br>
+		</div>
+	</div>
+	
+	<div class="content">
+		<div ex:role="collection" ex:itemtypes="Publication"></div>
+		<div style="width: 100%">
+			<table width="100%" cellspacing="0" style="border-collapse:collapse">
+				<tbody><tr><td>
+					Conference Papers
+					<hr>
+					<div class="exhibit-collectionView-body"><ol class="exhibit-tileView-body">
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 80px; " src="imgs/starlight.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiSys</span>&nbsp;<span><span>2016</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Practical Human Sensing in the Light</span></span>.<br/>
+								<div class="authors">Tianxing Li, Qiang Liu, and Xia Zhou</div>
+							</div>
+							<span><span>MobiSys</span>,</span><span><span> 2016</span></span>. 
+							<b class="award"><span><span>SIGMobile Research Highlights</span></span>.</b>
+							<div class="downloads">
+								» <a href="papers/mobisys16-starlight.pdf">[PDF]</a> <a href="https://youtu.be/DIDxR4zdrds">[Video]</a> <a href="http://dartnets.cs.dartmouth.edu/starlight">[Project Website]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 80px; " src="imgs/darkvlc.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>HotMobile</span>&nbsp;<span><span>2016</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Lighting Up the Internet of Things with DarkVLC</span></span>.<br/>
+								<div class="authors">Zhao Tian, Kevin Wright, and Xia Zhou</div>
+							</div>
+							<span><span>HotMobile</span>,</span><span><span> 2016</span></span>. 
+							<div class="downloads">
+								» <a href="papers/hotmobile16-darkvlc.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 80px; " src="imgs/LiSense-shadow.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiCom</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Human Sensing Using Visible Light Communication</span></span>.<br/>
+								<div class="authors">Tianxing Li, Chuankai An, Zhao Tian, Andrew T. Campbell, and Xia Zhou</div>
+							</div>
+							<span><span>MobiCom</span>,</span><span><span> 2015</span></span>. <span><span><span> 19</span></span>% acceptance rate. </span>
+							<b class="award"><span><span>Best Video Award</span></span>.</b>
+							<div class="downloads">
+								» <a href="papers/mobicom15-lisense.pdf">[PDF]</a> <a href="https://youtu.be/7wK-zo66GdY">[Video]</a> <a href="http://dartnets.cs.dartmouth.edu/lisense">[Project Website]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/wiprint.jpeg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>HotWireless</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>3D Printing Your Wireless Coverage</span></span>.<br/>
+								<div class="authors">Justin Chan, Changxi Zheng, and Xia Zhou</div>
+							</div>
+							<span><span>The 2nd ACM Workshop on Hot Topics in Wireless (HotWireless)</span>,</span><span><span> 2015</span></span>.
+							<b class="award"><span><span>Hot Paper Award</span></span>.</b>
+							<div class="downloads">
+								» <a href="papers/hotw15-wiprint.pdf">[PDF]</a> <a href="https://www.youtube.com/watch?v=1KVBFtSuCm0">[Video]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+					
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/vlcid.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>VLCS</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Visible Light Knows Who You Are</span></span>.<br/>
+								<div class="authors">Chuankai An, Tianxing Li, Zhao Tian, Andrew T. Campbell, and Xia Zhou</div>
+							</div>
+							<span><span>The 2nd ACM Workshop on Visible Light Communication Systems (VLCS)</span>,</span><span><span> 2015</span></span>.
+							<div class="downloads">
+								» <a href="">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/wiscan.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>UbiComp</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Low-Power Pervasive Wi-Fi Connectivity Using WiScan</span></span>.<br/>
+								<div class="authors">Tianxing Li, Chuankai An, Ranveer Chandra, Andrew T. Campbell, and Xia Zhou</div>
+							</div>
+							<span><span>UbiComp</span>,</span><span><span> 2015</span></span>.<span><span><span> 23.6</span></span>% acceptance rate. </span>
+							<div class="downloads">
+								» <a href="papers/ubicomp15-wiscan.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/smartgpa.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>UbiComp</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>SmartGPA: How Smartphones Can Assess and Predict Academic Performance of College Students</span></span>.<br/>
+								<div class="authors">Rui Wang, Peilin Hao, Gabriella Harari, Xia Zhou, and Andrew T. Campbell</div>
+							</div>
+							<span><span>UbiComp</span>,</span><span><span> 2015</span></span>.<span><span><span> 23.6</span></span>% acceptance rate. </span>
+							<b class="award"><span><span>Honorable Mention Award</span></span>.</b>
+							<div class="downloads">
+								» <a href="http://studentlife.cs.dartmouth.edu/smartgpa.pdf">[PDF]</a> <a href="https://www.youtube.com/watch?v=XqJTXo1uKJ0">[Video]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 80px; " src="imgs/stress.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MCSS</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>The Mobile Photographic Stress Meter (MPSM): A New Way to Measure Stress Using Images</span></span>.<br/>
+								<div class="authors">Sophia Haim, Rui Wang, Lorie Loeb, Xia Zhou, and Andrew T. Campbell.</div>
+							</div>
+							<span><span>The International Workshop on Mobile Systems for Computational Social Science (MCSS)</span>,</span><span><span> 2015</span></span>.
+							<div class="downloads">
+								» <a href="http://studentlife.cs.dartmouth.edu/mpsm.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+					
+					
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/photolog.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MCSS</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Using Opportunistic Face Logging from Smartphone to Infer Mental Health: Challenges and Future Directions</span></span>.<br/>
+								<div class="authors">Rui Wang, Xia Zhou, and Andrew T. Campbell.</div>
+							</div>
+							<span><span>The International Workshop on Mobile Systems for Computational Social Science (MCSS)</span>,</span><span><span> 2015</span></span>.
+							<div class="downloads">
+								» <a href="">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/hilight-mobisys.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiSys</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Real-Time Screen-Camera Communication Behind Any Scene</span></span>.<br/>
+								<div class="authors">Tianxing Li, Chuankai An, Xinran Xiao, Andrew T. Campbell, and Xia Zhou</div>
+							</div>
+							<span><span>MobiSys</span>,</span><span><span> 2015</span></span>.<span><span><span> 13</span></span>% acceptance rate. </span>	
+							<b class="award"><span><span>Best Demo Award</span></span>.</b>
+							<div class="downloads">
+								» <a href="papers/mobisys15-hilight.pdf">[PDF]</a> <a href="http://dartnets.cs.dartmouth.edu/hilight">[Demo] <a href="http://dartnets.cs.dartmouth.edu/hilight">[Project Website]</a></a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/bundling-www15.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>WWW</span>&nbsp;<span><span>2015</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Energy and Performance of Smartphone Radio Bundling in Outdoor Environments</span></span>.<br/>
+								<div class="authors">Ana Nika, Yibo Zhu, Ning Ding, Abhilash Jindal, Y. Charlie Hu, Xia Zhou, Ben Y. Zhao and Haitao Zheng</div>
+							</div>
+							<span><span>WWW</span>,</span><span><span> 2015</span></span>.<span><span><span> 14</span></span>% acceptance rate. </span>	
+							<div class="downloads">
+								» <a href="papers/www15-wifilte.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="text-align: center; width: 119px;"><img class="picture-border paper-image" style="height: 90px;" src="imgs/studentlife.png"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>UbiComp</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>StudentLife: Assessing Mental Health, Academic Performance and Behavioral Trends of College Students using Smartphones</span></span>.<br/>
+								<div class="authors">Rui Wang, Fanglin Chen, Zhenyu Chen, Tianxing Li, Gabriella Harari, Stefanie Tignor, Xia Zhou, Dror Ben-Zeev, and Andrew T. Campbell.</div>
+							</div>
+							<span><span>UbiComp</span>,</span><span><span> 2014</span></span>.<span><span><span> 14</span></span>% acceptance rate. </span>	
+							<b class="award"><span><span>Best Paper Nominee</span></span>.</b>
+							<div class="downloads">
+								» <a href="http://studentlife.cs.dartmouth.edu/studentlife.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/ivlc.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>HotWireless</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Visible Light Networking and Sensing</span></span>.<br/>
+								<div class="authors">Xia Zhou and Andrew T. Campbell.</div>
+							</div>
+							<span><span>The 1st ACM Workshop on Hot Topics in Wireless (HotWireless)</span>,</span><span><span> 2014</span></span>.
+							<div class="downloads">
+								» <a href="papers/hotw14-ivlc.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/specmonitor.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>HotWireless</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Towards Commoditized Real-time Spectrum Monitoring</span></span>.<br/>
+								<div class="authors">Ana Nika, Zengbin Zhang, Xia Zhou, Ben Y. Zhao, and Haitao Zheng.</div>
+							</div>
+							<span><span>The 1st ACM Workshop on Hot Topics in Wireless (HotWireless)</span>,</span><span><span> 2014</span></span>.
+							<div class="downloads">
+								» <a href="papers/hotw14-specmonitor.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/hilight.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>VLCS</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>HiLight: Hiding Bits in Pixel Translucency Changes</span></span>.<br/>
+								<div class="authors">Tianxing Li, Chuankai An, Andrew T. Campbell, and Xia Zhou.</div>
+							</div>
+							<span><span>The 1st ACM Workshop on Visible Light Communication Systems (VLCS)</span>,</span><span><span> 2014</span></span>.
+							<b class="award"><span><span>Best Paper Award</span></span>.</b>
+							<div class="downloads">
+								» <a href="papers/vlcs14-hilight.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/angora.jpeg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiCom</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Cutting the Cord: a Robust Wireless Facilities Network for Data Centers</span></span>.<br/>
+								<div class="authors">Yibo Zhu, Xia Zhou, Zengbin Zhang, Lin Zhou, Amin Vahdat, Ben Y. Zhao and Haitao Zheng.</div>
+							</div>
+							<span><span>MobiCom</span>,</span><span><span> 2014</span></span>.<span><span><span> 16</span></span>% acceptance rate. </span>	
+							<div class="downloads">
+								» <a href="papers/mobicom14-angora.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px;" src="imgs/hungry.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>WPA</span>&nbsp;<span><span>2014</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>My Smartphone Knows I am Hungry</span></span>.<br/>
+								<div class="authors">Fanglin Chen, Rui Wang, Xia Zhou, and Andrew T. Campbell.</div>
+							</div>
+							<span><span>The 1st ACM Workshop on Physical Analytics</span>,</span><span><span> 2014</span></span>.
+							<div class="downloads">
+								» <a href="papers/wpa14.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/cg.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>SIGMETRICS</span>&nbsp;<span><span>2013</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Practical Conflict Graphs for Dynamic Spectrum Distribution</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Zengbin Zhang, Gang Wang, Xiaoxiao Yu, Ben Y. Zhao, and Haitao Zheng.</div>
+							</div>
+							<span><span>SIGMETRICS</span>,</span><span><span> 2013</span></span>.<span><span><span> 14</span></span>% acceptance rate. </span>
+							<b class="award"><span><span>Best Practical Paper Award</span></span>.</b>
+							<div class="downloads">
+								» 
+								<a href="papers/sigmetrics13_cg.pdf">[PDF]</a>
+								<a href="papers/sigmetrics13-cg.ppsx">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+					
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%" cellspacing="0" style="border-collapse:collapse"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="./imgs/ceiling.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>SIGCOMM</span>&nbsp;<span><span>2012</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Mirror Mirror on the Ceiling: Flexible Wireless Links for Data Centers</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Zengbin Zhang, Yibo Zhu, Yubo Li, Saipriya Kumar, Amin Vahdat, Ben Y. Zhao, and Haitao Zheng.</div>
+							</div>
+							 
+							<span><span>SIGCOMM</span>,</span> <span><span> 2012</span></span>.<span><span><span> 14</span></span>% acceptance rate. </span>
+							<!--
+							<b class="award"><span><span>Outstanding Publication Award UCSB 2012</span></span>.</b>
+							-->
+							<div class="downloads">
+								» 
+								<a href="papers/sigcomm12_beam3d.pdf">[PDF]</a>
+								<a href="papers/sigcomm-beam3d-slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="./imgs/beam3d.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>HotNets</span>&nbsp;<span><span>2011</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>3D Beamforming for Wireless Data Centers</span></span>.<br/>
+								<div class="authors">Weile Zhang, <b><i>Xia Zhou</b></i>, Lei Yang, Zengbin Zhang, Ben Y. Zhao, and Haitao Zheng.</div>								
+							</div>
+							<span><span>HotNets</span>,</span><span><span> 2011</span></span>.<span><span><span> 20</span></span>% acceptance rate. </span>	
+							<div class="downloads">
+								» 
+								<a href="papers/hotnet11_beam3d.pdf">[PDF]</a>
+								<a href="papers/beam3d_slides.pdf">[Slides]</a>		
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/rotate.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiCom</span>&nbsp;<span><span>2011</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>I Am the Antenna: Accurate Outdoor AP Location Using Smartphones</span></span>.<br/>
+								<div class="authors">Zengbin Zhang, <b><i>Xia Zhou</b></i>, Weile Zhang, Yuanyang Zhang, Gang Wang, Ben Y. Zhao, and Haitao Zheng.</div>
+							</div>
+							<span><span>MobiCom</span>,</span><span><span> 2011</span></span>.<span><span><span> 14</span></span>% acceptance rate. </span>
+							<div class="downloads">
+								» 
+								<a href="papers/mobicom11_borealis.pdf">[PDF]</a>
+								<a href="http://www.cs.ucsb.edu/~zengbin/files/Mobicom11-Borealis-slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/swarm.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>SIGMETRICS</span>&nbsp;<span><span>2011</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>On the Stability and Optimality of Universal Swarms</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Stratis Ioannidis, and Laurent Massoulié.</div>
+							</div>
+							<span><span>SIGMETRICS</span>,</span><span><span> 2011</span></span>.<span><span><span> 15</span></span>% acceptance rate. </span>
+							<div class="downloads">
+								» 
+								<a href="papers/sigmet11_baron.pdf">[PDF]</a>
+								<a href="papers/sigmet11_final.ppsx">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/topaz.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>INFOCOM</span>&nbsp;<span><span>2011</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>To Preempt or Not: Tackling Bid and Time-based Cheating in Online Spectrum Auctions</span></span>.<br/>
+								<div class="authors">Lara Deek, <b><i>Xia Zhou</b></i>, Kevin Almeroth, and Haitao Zheng.</div>						
+							</div>
+							<span><span>INFOCOM</span></span>,<span><span> 2011</span></span>.<span><span><span> 16</span></span>% acceptance rate. </span>
+							» 
+							<a href="papers/info11_topaz.pdf">[PDF]</a>
+							<a href="http://www.cs.ucsb.edu/~laradeek/Infocom11ppt.pdf">[Slides]</a>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/collusion.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiHoc</span>&nbsp;<span><span>2010</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Breaking Bidder Collusion in Large-Scale Spectrum Auctions</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i> and Haitao Zheng.</div>				
+							</div>
+							<span><span>MobiHoc</span></span>,<span><span> 2010</span></span>.<span><span><span> 17</span></span>% acceptance rate. </span>
+							<div class="downloads">
+								» 
+								<a href="papers/hoc10_athena.pdf">[PDF]</a>
+								<a href="papers/athena_slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/optimus.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>DySPAN</span>&nbsp;<span><span>2010</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Optimus: SINR-driven Spectrum Distribution via Constraint Transformation</span></span>.<br/>
+								<div class="authors">Lili Cao, Lei Yang, <b><i>Xia Zhou</b></i>, Zengbin Zhang, and Haitao Zheng.</div>
+							</div>
+							<span><span>Symposium on New Frontiers in Dynamic Spectrum Access Networks (DySPAN)</span></span>,<span><span> 2010</span></span>.
+							<div class="downloads">
+								» 
+								<a href="http://www.cs.ucsb.edu/~htzheng/publications/pdfs/optimus-dyspan10.pdf">[PDF]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/doubleauc.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>INFOCOM</span>&nbsp;<span><span>2009</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>TRUST: A General Framework for Truthful Double Spectrum Auctions</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i> and Haitao Zheng.</div>
+							</div>
+							<span><span>INFOCOM</span></span>,<span><span> 2009</span></span>.<span><span><span> 20</span></span>% acceptance rate. </span>
+							<!--
+							<b class="award"><span><span>Outstanding Publication Award UCSB 2009</span></span>.</b>
+							-->
+							<div class="downloads">
+								» 
+								<a href="papers/info09_trust.pdf">[PDF]</a>
+								<a href="papers/infocom09-slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/auction.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>MobiCom</span>&nbsp;<span><span>2008</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>eBay in the Sky: Strategy-Proof Wireless Spectrum Auctions</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Sorabh Gandhi, Subhash Suri, and Haitao Zheng.</div>
+							</div>
+							<span><span>MobiCom</span></span>,<span><span> 2008</span></span>.<span><span><span> 12</span></span>% acceptance rate. </span>
+							<b class="award"><span><span>Best Paper Award Finalist</span></span>.</b>
+							<div class="downloads">
+								» 
+								<a href="papers/mobicom08_veritas.pdf">[PDF]</a>
+								<a href="papers/mobicom08-slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="imgs/traffic.jpg"></div>
+							<div style="margin-top: 5px; font-size: 85%; "><span>SDR</span>&nbsp;<span><span>2008</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Traffic-Driven Dynamic Spectrum Auctions</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Shravan Mettu, Haitao Zheng, and Elizabeth M. Belding.</div>
+							</div>
+							<span><span>Workshop on Networking Technologies for Software Defined Radio (SDR)</span></span>,<span><span> 2008</span></span>.
+							<div class="downloads">
+								» 
+								<a href="papers/sdr08.pdf">[PDF]</a>
+								<a href="papers/sdr08-slides.pdf">[Slides]</a>
+							</div>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<!--<div><img class="picture-border paper-image" style="width: 100px; height: 70px; " src="dtools.png"></div>-->
+							<div style="margin-top: 5px; font-size: 85%; "><span>ICC</span>&nbsp;<span><span>2007</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Correlation based Rate Adaptation via Insights from Incomplete Observations in 802.11 Networks</span></span>.<br/>
+								<div class="authors"><b><i>Xia Zhou</b></i>, Jun Zhao, and Guanghua Yang.</div>				
+							</div>
+							<span><span>International Conference on Communications (ICC)</span></span>,<span><span> 2007</span></span>.
+							» 
+							<a href="papers/cora-07.pdf">[PDF]</a>
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="margin-top: 5px; font-size: 85%; "><span>WiCOM</span>&nbsp;<span><span>2006</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Enhancing Base Station Security against DoS Attacks In Wireless Sensor Networks</span></span>.<br/>
+								<div class="authors">Zhen Cao, <b><i>Xia Zhou</b></i>, Maoxing Xu, Zhong Chen, Jianbin Hu, and Liyong Tang.</div>
+							</div>
+							<span><span>International Conference on Wireless Communications, Networking and Mobile Computing (WiCOM)</span></span>,<span><span> 2006</span></span>.
+						</td>
+						</tr></tbody></table>
+					</div></li>
+
+					<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>
+						<td align="left" width="100">
+							<div style="margin-top: 5px; font-size: 85%; "><span>AINA</span>&nbsp;<span><span>2006</span></span></div>
+						</td>
+						
+						<td>
+							<div>
+								<span class="publication-title"><span>Feedback: Towards Dynamic Behavior and Secure Routing for Wireless Sensor Networks</span></span>.<br/>
+								<div class="authors">Zhen Cao, Jianbin Hu, Zhong Chen, Maoxing Xu, and <b><i>Xia Zhou</b></i>.</div>		
+							</div>
+							<span><span>International Conference on Advanced Information Networking and Application (AINA)</span></span>,<span><span> 2006</span></span>.
+						</td>
+						</tr></tbody></table>
+					</div></li>
+				<br>
+				
+				<table width="100%" cellspacing="0" style="border-collapse:collapse">
+					<tbody><tr><td>
+						Journals and Book Chapters
+						<hr>
+						<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>		
+						<td>
+							<div>
+								<span class="publication-title"><span>Practical Conflict Graphs in the Wild</span></span>.
+								<div class="authors"><b><i>Xia Zhou</b></i>, Zengbin Zhang, Gang Wang, Xiaoxiao Yu, Ben Y. Zhao, and Haitao Zheng.</div>
+							</div>
+							<span><span>IEEE/ACM Transactions on Networking</span></span>,<span><span> 2014</span></span>.
+						</td>
+						</tr></tbody></table>
+						</div></li>
+
+						<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>	
+						<td>
+							<div>
+								<span class="publication-title"><span>Auction-based Spectrum Markets in Cognitive Radio Networks</span></span>.
+								<div class="authors"><b><i>Xia Zhou</b></i>, Heather Zheng, Maziar Nekovee, and Milind M. Buddhikot.</div>
+							</div>
+							<span><span>Cognitive Radio Communications and Networks</span></span>,<span><span> Academic Press, 2009</span></span>.
+						</td>
+						</tr></tbody></table>
+						</div></li>
+
+					</tbody></tr></td>
+				</table>
+				<br>
+						
+				<table width="100%" cellspacing="0" style="border-collapse:collapse">
+					<tbody><tr><td>
+						Posters and Technical Reports
+						<hr>
+						<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>						
+						<td>
+							<div>
+								<span class="publication-title"><span>Measurement-calibrated Conﬂict Graphs for Dynamic Spectrum Distribution</span></span>.
+								<div class="authors"><b><i>Xia Zhou</b></i>, Zengbin Zhang, Gang Wang, Xiaoxiao Yu, Ben Y. Zhao and Haitao Zheng.</div>
+							</div>
+							<span><span>DySPAN Poster</span></span>,<span><span> 2012</span></span>.
+							» 
+							<a href="papers/cg_dyspan12.pdf">[Poster Summary]</a>
+							<a href="papers/cg_poster_dyspan12.pdf">[Poster]</a>
+						</td>
+						</tr></tbody></table>
+						</div></li>
+						
+						<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>						
+						<td>
+							<div>
+								<span class="publication-title"><span>Towards Large-Scale Economic-Robust Spectrum Auctions</span></span>.
+								<div class="authors"><b><i>Xia Zhou</b></i>, Alessandra Sala, and Haitao Zheng.</div>
+							</div>
+							<span><span>MobiCom Student Poster</span></span>,<span><span> 2009</span></span>.
+							» 
+							<a href="papers/dc2_mobicom.pdf">[Poster Summary]</a>
+							<a href="papers/dc2_poster.pdf">[Poster]</a>
+						</td>
+						</tr></tbody></table>
+						</div></li>
+						
+						<li><div class="publication-lens" style="display: block; ">
+						<table width="100%"><tbody><tr>					
+						<td>
+							<div>
+								<span class="publication-title"><span>TRUST: A General Framework for Truthful Double Spectrum Auctions (Extended)</span></span>.
+								<div class="authors"><b><i>Xia Zhou</b></i> and Haitao Zheng.</div>
+							</div>
+							<span><span>UCSB Technical report</span></span>,<span><span> 2009</span></span>.
+							» 
+							<a href="papers/tech_trust.pdf">[PDF]</a>
+						</td>
+						</tr></tbody></table>
+						</div></li>
+					
+					</td>
+					</tr></tbody></table>
+					</ol></div><div class="exhibit-collectionView-footer"><span><a href="javascript:" class="exhibit-action">Show only the first 10 results</a></span></div></div>			
+				</td>
+			</tr>
+		</tbody></table></div>
+	</div>
+	<div class="bottom"></div>
+</div>
+
+</body></html>
